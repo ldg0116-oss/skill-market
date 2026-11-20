@@ -1,0 +1,31 @@
+{
+  "_comment": "API 접근 불가 환경용 수동 스냅샷 (2026-11-20 조사). GitHub Actions 실행 시 실제 API 값으로 덮어씀.",
+  "as_of": "2026-11-20",
+  "repos": {
+    "anthropics/skills": {"stars": 196600, "pushed_at": "2026-11-19", "license": "Apache-2.0", "description": "Public repository for Agent Skills — docx, pdf, pptx, xlsx and more"},
+    "anthropics/claude-plugins-official": {"stars": 2600, "pushed_at": "2026-11-19", "license": "미표기", "description": "Official Claude Code plugin directory"},
+    "obra/superpowers": {"stars": 220000, "pushed_at": "2026-11-03", "license": "MIT", "description": "Skills framework: brainstorming → planning → TDD → review for coding agents"},
+    "mattpocock/skills": {"stars": 12000, "pushed_at": "2026-11-10", "license": "MIT", "description": "Small practical engineering skills (grill-me, TDD, grilling)"},
+    "addyosmani/agent-skills": {"stars": 49000, "pushed_at": "2026-11-15", "license": "MIT", "description": "24 production-grade engineering skills: spec → implement → test → review"},
+    "affaan-m/everything-claude-code": {"stars": 163000, "pushed_at": "2026-11-18", "license": "MIT", "description": "ECC — skills + memory + security + research workflow for Claude Code"},
+    "adobe/skills": {"stars": 39, "pushed_at": "2026-04-21", "license": "Apache-2.0", "description": "108 Adobe skills: AEM, Analytics, Commerce"},
+    "Jakeschincariol/replica-skill": {"stars": 9800, "pushed_at": "2026-10-20", "license": "MIT", "description": "11-skill pack for clean-room app recreation"},
+    "modelcontextprotocol/servers": {"stars": 91900, "pushed_at": "2026-11-18", "license": "MIT", "description": "Reference MCP servers: filesystem, git, fetch, memory"},
+    "upstash/context7": {"stars": 64400, "pushed_at": "2026-11-19", "license": "MIT", "description": "Up-to-date library docs injected into LLM context"},
+    "microsoft/playwright-mcp": {"stars": 38400, "pushed_at": "2026-11-18", "license": "Apache-2.0", "description": "Browser automation via accessibility snapshots"},
+    "github/github-mcp-server": {"stars": 34600, "pushed_at": "2026-11-19", "license": "MIT", "description": "GitHub issues, PRs and code search as MCP tools"},
+    "punkpeye/awesome-mcp-servers": {"stars": 98000, "pushed_at": "2026-11-17", "license": "미표기", "description": "Curated list of MCP servers across 50+ domains"},
+    "wshobson/agents": {"stars": 42600, "pushed_at": "2026-11-18", "license": "MIT", "description": "94 Claude Code plugins: 85 agents, 47 skills"},
+    "VoltAgent/awesome-claude-code-subagents": {"stars": 26700, "pushed_at": "2026-11-06", "license": "MIT", "description": "100+ subagent definitions for Claude Code"},
+    "hesreallyhim/awesome-claude-code": {"stars": 56800, "pushed_at": "2026-11-20", "license": "미표기", "description": "Curated skills, agents, hooks and resources for Claude Code"},
+    "davila7/claude-code-templates": {"stars": 32200, "pushed_at": "2026-11-19", "license": "MIT", "description": "npx CLI to configure agents, commands, hooks, MCP + monitoring"},
+    "vercel-labs/skills": {"stars": 9800, "pushed_at": "2026-11-18", "license": "MIT", "description": "npx add-skill — install skills into 15+ agents"},
+    "agentskills/agentskills": {"stars": 25300, "pushed_at": "2026-11-15", "license": "Apache-2.0", "description": "Open SKILL.md specification"},
+    "openai/codex": {"stars": 76300, "pushed_at": "2026-11-19", "license": "Apache-2.0", "description": "Codex CLI — skills, plugins, MCP"},
+    "google-gemini/gemini-cli": {"stars": 108900, "pushed_at": "2026-11-19", "license": "Apache-2.0", "description": "Gemini CLI — free tier, SKILL.md compatible"},
+    "github/awesome-copilot": {"stars": 41300, "pushed_at": "2026-11-20", "license": "MIT", "description": "Copilot instructions, prompts, chat modes, skills"},
+    "PatrickJS/awesome-cursorrules": {"stars": 41200, "pushed_at": "2026-06-15", "license": "미표기", "description": ".cursorrules collection by framework"},
+    "microsoft/mcp-for-beginners": {"stars": 10700, "pushed_at": "2026-11-19", "license": "MIT", "description": "MCP curriculum from basics to security"},
+    "n8n-io/n8n": {"stars": 208200, "pushed_at": "2026-11-19", "license": "Sustainable Use License", "description": "Workflow automation with 1,500+ integrations and AI agent nodes"}
+  }
+}

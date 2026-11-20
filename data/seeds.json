@@ -1,0 +1,36 @@
+{
+  "_comment": "수집 대상 저장소. type: skill | mcp | agent | marketplace | rules | host | curation | tool | education | automation. hint_category는 분류 보조(없으면 자동).",
+  "repos": [
+    {"repo": "anthropics/skills", "type": "skill", "official": true, "compat": ["claude-code", "claude.ai", "codex", "gemini-cli"], "hint_category": "문서·기획"},
+    {"repo": "anthropics/claude-plugins-official", "type": "marketplace", "official": true, "compat": ["claude-code"]},
+    {"repo": "obra/superpowers", "type": "skill", "official": false, "compat": ["claude-code", "codex", "cursor", "gemini-cli", "opencode"], "hint_category": "코딩"},
+    {"repo": "mattpocock/skills", "type": "skill", "official": false, "compat": ["claude-code", "cursor", "codex"], "hint_category": "코딩"},
+    {"repo": "addyosmani/agent-skills", "type": "skill", "official": false, "compat": ["claude-code", "codex", "gemini-cli", "cursor"], "hint_category": "코딩"},
+    {"repo": "affaan-m/everything-claude-code", "type": "skill", "official": false, "compat": ["claude-code"], "hint_category": "코딩"},
+    {"repo": "adobe/skills", "type": "skill", "official": true, "compat": ["claude-code", "cursor"], "hint_category": "마케팅·콘텐츠"},
+    {"repo": "Jakeschincariol/replica-skill", "type": "skill", "official": false, "compat": ["claude-code"], "hint_category": "기획·문서"},
+    {"repo": "modelcontextprotocol/servers", "type": "mcp", "official": true, "compat": ["mcp"], "hint_category": "자동화"},
+    {"repo": "upstash/context7", "type": "mcp", "official": true, "compat": ["mcp", "claude-code", "cursor", "chatgpt"], "hint_category": "코딩"},
+    {"repo": "microsoft/playwright-mcp", "type": "mcp", "official": true, "compat": ["mcp"], "hint_category": "자동화"},
+    {"repo": "github/github-mcp-server", "type": "mcp", "official": true, "compat": ["mcp"], "hint_category": "코딩"},
+    {"repo": "punkpeye/awesome-mcp-servers", "type": "curation", "official": false, "compat": ["mcp"], "hint_category": "자동화"},
+    {"repo": "wshobson/agents", "type": "marketplace", "official": false, "compat": ["claude-code"], "hint_category": "코딩"},
+    {"repo": "VoltAgent/awesome-claude-code-subagents", "type": "agent", "official": false, "compat": ["claude-code"], "hint_category": "코딩"},
+    {"repo": "hesreallyhim/awesome-claude-code", "type": "curation", "official": false, "compat": ["claude-code"]},
+    {"repo": "davila7/claude-code-templates", "type": "tool", "official": false, "compat": ["claude-code"], "hint_category": "자동화"},
+    {"repo": "vercel-labs/skills", "type": "tool", "official": true, "compat": ["claude-code", "codex", "cursor", "copilot", "gemini-cli"]},
+    {"repo": "agentskills/agentskills", "type": "education", "official": true, "compat": ["all"]},
+    {"repo": "openai/codex", "type": "host", "official": true, "compat": ["codex"]},
+    {"repo": "google-gemini/gemini-cli", "type": "host", "official": true, "compat": ["gemini-cli"]},
+    {"repo": "github/awesome-copilot", "type": "rules", "official": true, "compat": ["copilot"], "hint_category": "코딩"},
+    {"repo": "PatrickJS/awesome-cursorrules", "type": "rules", "official": false, "compat": ["cursor"], "hint_category": "코딩"},
+    {"repo": "microsoft/mcp-for-beginners", "type": "education", "official": true, "compat": ["mcp"], "hint_category": "비개발자"},
+    {"repo": "n8n-io/n8n", "type": "automation", "official": true, "compat": ["mcp"], "hint_category": "자동화"}
+  ],
+  "discover_queries": [
+    "filename:SKILL.md path:skills stars:>200",
+    "topic:claude-code-skills",
+    "topic:agent-skills",
+    "topic:mcp-server stars:>1000"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-11-20T10:12:43.009628+00:00",
+  "new": [
+    "anthropics/skills",
+    "affaan-m/everything-claude-code",
+    "obra/superpowers",
+    "google-gemini/gemini-cli",
+    "modelcontextprotocol/servers",
+    "n8n-io/n8n",
+    "punkpeye/awesome-mcp-servers",
+    "github/awesome-copilot",
+    "openai/codex",
+    "upstash/context7",
+    "hesreallyhim/awesome-claude-code",
+    "addyosmani/agent-skills",
+    "agentskills/agentskills",
+    "wshobson/agents",
+    "davila7/claude-code-templates",
+    "microsoft/playwright-mcp",
+    "github/github-mcp-server",
+    "microsoft/mcp-for-beginners",
+    "vercel-labs/skills",
+    "VoltAgent/awesome-claude-code-subagents",
+    "mattpocock/skills",
+    "anthropics/claude-plugins-official",
+    "Jakeschincariol/replica-skill",
+    "PatrickJS/awesome-cursorrules",
+    "adobe/skills"
+  ],
+  "star_jump": [],
+  "stale": [
+    {
+      "repo": "PatrickJS/awesome-cursorrules",
+      "days": 158
+    },
+    {
+      "repo": "adobe/skills",
+      "days": 213
+    }
+  ],
+  "candidates": []
+}
