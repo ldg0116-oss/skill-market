@@ -91,6 +91,7 @@ def score(seed, repo, days_since_push):
     return s
 
 
+KO = json.loads((DATA / "ko.json").read_text(encoding="utf-8")) if (DATA / "ko.json").exists() else {}
 SNAPSHOT = json.loads((DATA / "snapshot.json").read_text(encoding="utf-8")) if (DATA / "snapshot.json").exists() else {"repos": {}}
 API_OK = None  # 첫 호출에서 판정
 
@@ -131,7 +132,9 @@ def fetch_repo(seed):
     lic = (r.get("license") or {}).get("spdx_id") or "미표기"
     desc = r.get("description") or ""
     text = f"{full} {desc} {' '.join(r.get('topics', []))} {seed.get('type','')}"
+    k = KO.get(full, {})
     return {
+        "ko": k.get("ko", ""), "ko_desc": k.get("desc", ""), "rec": k.get("rec", ""), "comment": k.get("comment", ""),
         "repo": full,
         "url": r["html_url"],
         "name": r["name"],
@@ -149,7 +152,7 @@ def fetch_repo(seed):
         "license_ok": lic in ALLOWED_LICENSES,
         "topics": r.get("topics", []),
         "archived": r.get("archived", False),
-        "category": classify(text, seed.get("hint_category")),
+        "category": classify(text, k.get("category") or seed.get("hint_category")),
         "difficulty": difficulty(seed, r),
         "score": score(seed, r, days),
         "source": r.get("_source", "github-api"),
