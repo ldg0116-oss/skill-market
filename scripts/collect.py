@@ -135,6 +135,7 @@ def fetch_repo(seed):
     k = KO.get(full, {})
     return {
         "ko": k.get("ko", ""), "ko_desc": k.get("desc", ""), "rec": k.get("rec", ""), "comment": k.get("comment", ""),
+        "pros": k.get("pros", ""), "cons": k.get("cons", ""),
         "repo": full,
         "url": r["html_url"],
         "name": r["name"],

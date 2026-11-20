@@ -77,6 +77,8 @@ def card(s, rec):
     sub = html.escape(s["repo"]) if s.get("ko") else ""
     desc = html.escape(s.get("ko_desc") or s["description"] or "")
     comment = f"<p class=cmt>{html.escape(s['comment'])}</p>" if s.get("comment") else ""
+    if s.get("pros") or s.get("cons"):
+        comment += f"<div class=pc><span class=pro>＋ {html.escape(s.get('pros',''))}</span><span class=con>－ {html.escape(s.get('cons',''))}</span></div>"
     search = f"{s['repo']} {s.get('ko','')} {s.get('ko_desc','')} {s['description']} {s.get('comment','')}".lower()
     return f"""<article class=card data-cat="{html.escape(s['category'])}" data-type="{s['type']}" data-diff="{s['difficulty']}" data-name="{html.escape(search)}">
   <header><a href="{s['url']}" target=_blank rel=noopener>{title}</a> {badge}{off}</header>
@@ -113,6 +115,7 @@ page = f"""<!doctype html><html lang=ko><head><meta charset=utf-8><meta name=vie
 .desc{{margin:0;color:var(--mut);font-size:13px;min-height:38px}}.meta{{font-size:12px;color:var(--mut);display:flex;gap:10px;flex-wrap:wrap}}
 .tags .tag{{font-size:11px;border:1px solid var(--line);border-radius:6px;padding:1px 6px;margin-right:4px;color:var(--mut)}}
 .rec{{font-size:11px;background:var(--acc2);color:#111;border-radius:6px;padding:1px 6px}}.g-필수{{background:#c0392b;color:#fff}}.g-선택{{background:var(--line);color:var(--fg)}}.g-보류{{background:transparent;border:1px solid var(--line);color:var(--mut)}}
+.pc{{display:flex;flex-direction:column;gap:2px;font-size:12px}}.pro{{color:var(--acc)}}.con{{color:#c0392b}}
 .sub{{font-size:11px;color:var(--mut);margin-top:-4px}}.cmt{{margin:0;font-size:12.5px;border-left:2px solid var(--acc2);padding-left:8px;color:var(--fg)}}.off{{font-size:11px;background:var(--acc);color:#fff;border-radius:6px;padding:1px 6px}}
 .stale{{color:#c0392b}}.fresh{{color:var(--mut)}}.score{{font-size:12px;color:var(--mut)}}.score b{{color:var(--fg);font-size:14px}}
 .install{{display:flex;gap:6px;align-items:center;margin-top:auto}}.install code{{flex:1;font-size:11px;background:var(--bg);border:1px solid var(--line);padding:6px 8px;border-radius:6px;overflow-x:auto;white-space:nowrap}}
@@ -141,10 +144,10 @@ q.oninput=apply;try{{const sv=localStorage.getItem('sm-f');if(sv){{const b=btns.
 lines = [f"# 주간 스킬 리포트 {TODAY}", "", f"수집 {len(SKILLS)}개 · 신규 {len(DIFF.get('new', []))} · 급상승 {len(DIFF.get('star_jump', []))} · 90일 이상 미갱신 {len(DIFF.get('stale', []))}", ""]
 for cat in CATS:
     items = [s for s in SKILLS if s["category"] == cat][:TOP_PER_CAT]
-    lines += [f"## {cat} — 추천 {len(items)}", "", "| 스킬 | 등급 | ★ | 최근 push | 점수 | 한 줄 평 |", "| --- | --- | --- | --- | --- | --- |"]
+    lines += [f"## {cat} — 추천 {len(items)}", "", "| 스킬 | 등급 | ★ | 점수 | 장점 | 단점 | 한 줄 평 |", "| --- | --- | --- | --- | --- | --- | --- |"]
     for s in items:
         nm = f"{s['ko']} ([{s['repo']}]({s['url']}))" if s.get("ko") else f"[{s['repo']}]({s['url']})"
-        lines.append(f"| {nm} | {s.get('rec','')} | {fmt_stars(s['stars'])} | {s['pushed_at']} | {s['score']['합계']} | {s.get('comment','')} |")
+        lines.append(f"| {nm} | {s.get('rec','')} | {fmt_stars(s['stars'])} | {s['score']['합계']} | {s.get('pros','')} | {s.get('cons','')} | {s.get('comment','')} |")
     lines.append("")
 if DIFF.get("candidates"):
     lines += ["## 검토 대기 후보 (discover)", "", "| 저장소 | ★ | 설명 |", "| --- | --- | --- |"]
