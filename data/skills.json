@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T10:14:41.414167+00:00",
+  "generated_at": "2026-11-20T10:35:56.743967+00:00",
   "count": 25,
   "categories": [
     "코딩",
@@ -10,6 +10,10 @@
   ],
   "skills": [
     {
+      "ko": "맷 포콕 실무 스킬",
+      "ko_desc": "grill-me(요구사항 캐묻기)·TDD 등 작고 날카로운 실무 스킬",
+      "rec": "추천",
+      "comment": "grill-me 하나만으로도 가치. 기획 단계에서 AI가 질문을 먼저 하게 만듦 — 비개발 업무에도 통함",
       "repo": "mattpocock/skills",
       "url": "https://github.com/mattpocock/skills",
       "name": "skills",
@@ -22,9 +26,9 @@
         "cursor",
         "codex"
       ],
-      "stars": 328466,
-      "forks": 27599,
-      "open_issues": 259,
+      "stars": 328478,
+      "forks": 27601,
+      "open_issues": 260,
       "pushed_at": "2026-11-19",
       "days_since_push": 0,
       "license": "MIT",
@@ -45,6 +49,10 @@
       "source": "github-api"
     },
     {
+      "ko": "에브리씽 클로드 코드 (ECC)",
+      "ko_desc": "스킬+메모리+보안+리서치가 묶인 대형 종합 세트",
+      "rec": "선택",
+      "comment": "다 들어있어서 무겁다. 필요한 스킬만 골라 복사해 쓰는 게 낫고, 통째 설치는 비추",
       "repo": "affaan-m/everything-claude-code",
       "url": "https://github.com/affaan-m/ECC",
       "name": "ECC",
@@ -55,7 +63,7 @@
       "compat": [
         "claude-code"
       ],
-      "stars": 307469,
+      "stars": 307478,
       "forks": 45263,
       "open_issues": 137,
       "pushed_at": "2026-11-20",
@@ -87,6 +95,10 @@
       "source": "github-api"
     },
     {
+      "ko": "앤트로픽 공식 스킬",
+      "ko_desc": "워드·PDF·PPT·엑셀 생성 등 공식 스킬 모음. SKILL.md 형식의 기준",
+      "rec": "필수",
+      "comment": "가장 먼저 설치. 문서 작업이 바로 체감되고, 다른 스킬 만들 때 템플릿 역할",
       "repo": "anthropics/skills",
       "url": "https://github.com/anthropics/skills",
       "name": "skills",
@@ -100,7 +112,7 @@
         "codex",
         "gemini-cli"
       ],
-      "stars": 197860,
+      "stars": 197866,
       "forks": 23175,
       "open_issues": 1562,
       "pushed_at": "2026-11-16",
@@ -111,7 +123,7 @@
         "agent-skills"
       ],
       "archived": false,
-      "category": "코딩",
+      "category": "기획·문서",
       "difficulty": "입문",
       "score": {
         "유지보수": 15,
@@ -125,6 +137,10 @@
       "source": "github-api"
     },
     {
+      "ko": "애디 오스마니 엔지니어링 스킬",
+      "ko_desc": "스펙→구현→테스트→리뷰 프로덕션급 워크플로 24개",
+      "rec": "추천",
+      "comment": "슈퍼파워보다 가볍고 문서가 친절. 둘 중 하나만 — 입문이면 이쪽",
       "repo": "addyosmani/agent-skills",
       "url": "https://github.com/addyosmani/agent-skills",
       "name": "agent-skills",
@@ -138,8 +154,8 @@
         "gemini-cli",
         "cursor"
       ],
-      "stars": 119275,
-      "forks": 12418,
+      "stars": 119277,
+      "forks": 12419,
       "open_issues": 122,
       "pushed_at": "2026-11-18",
       "days_since_push": 1,
@@ -168,6 +184,10 @@
       "source": "github-api"
     },
     {
+      "ko": "슈퍼파워",
+      "ko_desc": "브레인스토밍→계획→TDD→리뷰를 강제하는 개발 방법론 스킬 세트",
+      "rec": "추천",
+      "comment": "코드 품질은 확실히 오르지만 토큰 1.5~2배. 작은 수정엔 끄고 새 기능 만들 때만",
       "repo": "obra/superpowers",
       "url": "https://github.com/obra/superpowers",
       "name": "superpowers",
@@ -182,7 +202,7 @@
         "gemini-cli",
         "opencode"
       ],
-      "stars": 322428,
+      "stars": 322442,
       "forks": 28653,
       "open_issues": 356,
       "pushed_at": "2026-11-03",
@@ -214,6 +234,10 @@
       "source": "github-api"
     },
     {
+      "ko": "MCP 서버 총목록",
+      "ko_desc": "50개 분야 MCP 서버 큐레이션",
+      "rec": "추천",
+      "comment": "설치 아님, 지도. '이런 것도 연결되나?' 할 때 먼저 여기",
       "repo": "punkpeye/awesome-mcp-servers",
       "url": "https://github.com/punkpeye/awesome-mcp-servers",
       "name": "awesome-mcp-servers",
@@ -226,7 +250,7 @@
       ],
       "stars": 98296,
       "forks": 20469,
-      "open_issues": 4874,
+      "open_issues": 4875,
       "pushed_at": "2026-11-17",
       "days_since_push": 3,
       "license": "MIT",
@@ -250,6 +274,10 @@
       "source": "github-api"
     },
     {
+      "ko": "코덱스 CLI",
+      "ko_desc": "OpenAI 코딩 에이전트. SKILL.md·플러그인·MCP 지원",
+      "rec": "추천",
+      "comment": "비교 블로그용으로 필요. ChatGPT 구독 있으면 바로. 클로드 스킬 폴더(.agents) 공유 가능",
       "repo": "openai/codex",
       "url": "https://github.com/openai/codex",
       "name": "codex",
@@ -260,9 +288,9 @@
       "compat": [
         "codex"
       ],
-      "stars": 135953,
-      "forks": 21563,
-      "open_issues": 28043,
+      "stars": 135956,
+      "forks": 21564,
+      "open_issues": 28047,
       "pushed_at": "2026-11-20",
       "days_since_push": 0,
       "license": "Apache-2.0",
@@ -283,6 +311,10 @@
       "source": "github-api"
     },
     {
+      "ko": "제미나이 CLI",
+      "ko_desc": "구글 코딩 에이전트. 무료 1,000회/일, SKILL.md 호환",
+      "rec": "필수",
+      "comment": "무료라서 비교 실험 비용 0. 같은 스킬을 세 도구에서 돌리는 글의 핵심 재료",
       "repo": "google-gemini/gemini-cli",
       "url": "https://github.com/google-gemini/gemini-cli",
       "name": "gemini-cli",
@@ -293,7 +325,7 @@
       "compat": [
         "gemini-cli"
       ],
-      "stars": 108950,
+      "stars": 108951,
       "forks": 14965,
       "open_issues": 729,
       "pushed_at": "2026-11-20",
@@ -310,7 +342,7 @@
         "mcp-server"
       ],
       "archived": false,
-      "category": "자동화",
+      "category": "코딩",
       "difficulty": "중급",
       "score": {
         "유지보수": 15,
@@ -324,6 +356,10 @@
       "source": "github-api"
     },
     {
+      "ko": "n8n 워크플로 자동화",
+      "ko_desc": "1,500개 연동 노코드 자동화 + AI 에이전트 노드",
+      "rec": "선택",
+      "comment": "스킬이 아니라 플랫폼. 블로그 발행·SNS 예약 같은 반복 업무 연결용. 무료 셀프호스팅 가능",
       "repo": "n8n-io/n8n",
       "url": "https://github.com/n8n-io/n8n",
       "name": "n8n",
@@ -334,9 +370,9 @@
       "compat": [
         "mcp"
       ],
-      "stars": 211493,
-      "forks": 61607,
-      "open_issues": 1235,
+      "stars": 211494,
+      "forks": 61606,
+      "open_issues": 1234,
       "pushed_at": "2026-11-20",
       "days_since_push": 0,
       "license": "NOASSERTION",
@@ -378,6 +414,10 @@
       "source": "github-api"
     },
     {
+      "ko": "MCP 공식 레퍼런스 서버",
+      "ko_desc": "파일시스템·Git·웹 가져오기·메모리 기본 서버",
+      "rec": "추천",
+      "comment": "MCP가 뭔지 배우기엔 최고. 파일시스템 서버는 경로 제한 꼭 걸 것",
       "repo": "modelcontextprotocol/servers",
       "url": "https://github.com/modelcontextprotocol/servers",
       "name": "servers",
@@ -411,6 +451,10 @@
       "source": "github-api"
     },
     {
+      "ko": "코파일럿 프롬프트 모음",
+      "ko_desc": "Copilot용 지침·프롬프트·챗 모드·스킬",
+      "rec": "보류",
+      "comment": "Copilot 쓸 때만. Claude Code 중심이면 불필요",
       "repo": "github/awesome-copilot",
       "url": "https://github.com/github/awesome-copilot",
       "name": "awesome-copilot",
@@ -421,7 +465,7 @@
       "compat": [
         "copilot"
       ],
-      "stars": 41377,
+      "stars": 41378,
       "forks": 5393,
       "open_issues": 83,
       "pushed_at": "2026-11-20",
@@ -453,6 +497,10 @@
       "source": "github-api"
     },
     {
+      "ko": "스킬 설치기 (skills.sh)",
+      "ko_desc": "npx add-skill 한 줄로 15개 이상 도구에 스킬 설치",
+      "rec": "추천",
+      "comment": "Claude·Codex·Cursor·Gemini에 같은 스킬 한 번에. 비교 콘텐츠 만들 때 필수 도구",
       "repo": "vercel-labs/skills",
       "url": "https://github.com/vercel-labs/skills",
       "name": "skills",
@@ -467,7 +515,7 @@
         "copilot",
         "gemini-cli"
       ],
-      "stars": 40152,
+      "stars": 40154,
       "forks": 3553,
       "open_issues": 785,
       "pushed_at": "2026-11-17",
@@ -476,7 +524,7 @@
       "license_ok": true,
       "topics": [],
       "archived": false,
-      "category": "코딩",
+      "category": "자동화",
       "difficulty": "입문",
       "score": {
         "유지보수": 15,
@@ -490,6 +538,10 @@
       "source": "github-api"
     },
     {
+      "ko": "클로드 공식 플러그인 디렉터리",
+      "ko_desc": "/plugin > Discover 에 뜨는 공식 목록",
+      "rec": "추천",
+      "comment": "Claude Code 안에서 이미 보임. 별도 설치 불필요, 주 1회 훑어보기용",
       "repo": "anthropics/claude-plugins-official",
       "url": "https://github.com/anthropics/claude-plugins-official",
       "name": "claude-plugins-official",
@@ -500,7 +552,7 @@
       "compat": [
         "claude-code"
       ],
-      "stars": 47772,
+      "stars": 47773,
       "forks": 4954,
       "open_issues": 1320,
       "pushed_at": "2026-11-20",
@@ -527,6 +579,10 @@
       "source": "github-api"
     },
     {
+      "ko": "컨텍스트7",
+      "ko_desc": "최신 라이브러리 공식 문서를 AI에 실시간 주입하는 MCP",
+      "rec": "필수",
+      "comment": "코드 짤 때 환각 줄이는 가장 쉬운 방법. 설치 1줄, 코드 실행 없음. 수촌 FC·라포레 앱 작업에 바로 효과",
       "repo": "upstash/context7",
       "url": "https://github.com/upstash/context7",
       "name": "context7",
@@ -540,7 +596,7 @@
         "cursor",
         "chatgpt"
       ],
-      "stars": 65159,
+      "stars": 65160,
       "forks": 3277,
       "open_issues": 53,
       "pushed_at": "2026-11-20",
@@ -568,6 +624,10 @@
       "source": "github-api"
     },
     {
+      "ko": "클로드 코드 리소스 모음",
+      "ko_desc": "스킬·에이전트·훅·상태줄 등 전체 리소스",
+      "rec": "선택",
+      "comment": "매일 갱신돼 동향 파악엔 좋지만 양이 많아 길을 잃기 쉬움",
       "repo": "hesreallyhim/awesome-claude-code",
       "url": "https://github.com/hesreallyhim/awesome-claude-code",
       "name": "awesome-claude-code",
@@ -578,9 +638,9 @@
       "compat": [
         "claude-code"
       ],
-      "stars": 58412,
+      "stars": 58415,
       "forks": 4984,
-      "open_issues": 1291,
+      "open_issues": 1294,
       "pushed_at": "2026-11-20",
       "days_since_push": 0,
       "license": "NOASSERTION",
@@ -621,6 +681,10 @@
       "source": "github-api"
     },
     {
+      "ko": "역할별 에이전트 마켓",
+      "ko_desc": "85개 전문 에이전트·47개 스킬 플러그인 모음",
+      "rec": "선택",
+      "comment": "양은 많은데 품질 편차 큼. 필요한 역할 1~2개만 골라 설치",
       "repo": "wshobson/agents",
       "url": "https://github.com/wshobson/agents",
       "name": "agents",
@@ -631,7 +695,7 @@
       "compat": [
         "claude-code"
       ],
-      "stars": 42717,
+      "stars": 42719,
       "forks": 4516,
       "open_issues": 7,
       "pushed_at": "2026-11-18",
@@ -675,6 +739,10 @@
       "source": "github-api"
     },
     {
+      "ko": "클로드 코드 템플릿 CLI",
+      "ko_desc": "npx 한 번으로 에이전트·커맨드·훅·MCP 일괄 설정 + 사용량 대시보드",
+      "rec": "선택",
+      "comment": "초기 세팅 빠름. 단 훅을 자동 설치하니 뭐가 깔리는지 확인하고 쓸 것",
       "repo": "davila7/claude-code-templates",
       "url": "https://github.com/davila7/claude-code-templates",
       "name": "claude-code-templates",
@@ -719,6 +787,10 @@
       "source": "github-api"
     },
     {
+      "ko": "MCP 입문 강좌",
+      "ko_desc": "MS 공식 MCP 커리큘럼, 기초부터 보안까지",
+      "rec": "추천",
+      "comment": "블로그 독자에게 소개할 교육 자료. 직접 쓰기보다 '여기서 배우세요' 링크용",
       "repo": "microsoft/mcp-for-beginners",
       "url": "https://github.com/microsoft/mcp-for-beginners",
       "name": "mcp-for-beginners",
@@ -767,6 +839,10 @@
       "source": "github-api"
     },
     {
+      "ko": "플레이라이트 MCP (브라우저 자동화)",
+      "ko_desc": "AI가 브라우저를 열고 클릭·입력·캡처",
+      "rec": "추천",
+      "comment": "비교 실험 화면 캡처 자동화에 쓸 수 있음. 네이버 자동 게시엔 쓰지 말 것 (정책 위반)",
       "repo": "microsoft/playwright-mcp",
       "url": "https://github.com/microsoft/playwright-mcp",
       "name": "playwright-mcp",
@@ -777,7 +853,7 @@
       "compat": [
         "mcp"
       ],
-      "stars": 39922,
+      "stars": 39923,
       "forks": 3470,
       "open_issues": 0,
       "pushed_at": "2026-11-18",
@@ -803,6 +879,10 @@
       "source": "github-api"
     },
     {
+      "ko": "깃허브 MCP 서버",
+      "ko_desc": "이슈·PR·코드 검색을 대화로 처리",
+      "rec": "선택",
+      "comment": "혼자 개발하면 필요 적음. 토큰 발급 번거로움. 협업 시작하면 그때",
       "repo": "github/github-mcp-server",
       "url": "https://github.com/github/github-mcp-server",
       "name": "github-mcp-server",
@@ -840,6 +920,10 @@
       "source": "github-api"
     },
     {
+      "ko": "에이전트 스킬 공개 표준",
+      "ko_desc": "SKILL.md 스펙 문서",
+      "rec": "선택",
+      "comment": "스킬 직접 만들 때 1회 읽기. '스킬이 뭔가' 블로그 글 출처로 인용",
       "repo": "agentskills/agentskills",
       "url": "https://github.com/agentskills/agentskills",
       "name": "agentskills",
@@ -875,6 +959,10 @@
       "source": "github-api"
     },
     {
+      "ko": "어도비 스킬",
+      "ko_desc": "AEM·애널리틱스·커머스 등 어도비 제품용 108개",
+      "rec": "보류",
+      "comment": "어도비 제품 안 쓰면 무관. 사이트 이관용 replica 스킬만 참고 가치",
       "repo": "adobe/skills",
       "url": "https://github.com/adobe/skills",
       "name": "skills",
@@ -913,6 +1001,10 @@
       "source": "github-api"
     },
     {
+      "ko": "서브에이전트 100선",
+      "ko_desc": "서브에이전트 정의 파일 100개 이상",
+      "rec": "선택",
+      "comment": "직접 에이전트 만들 때 예시로 참고. 그대로 설치할 건 아님",
       "repo": "VoltAgent/awesome-claude-code-subagents",
       "url": "https://github.com/VoltAgent/awesome-claude-code-subagents",
       "name": "awesome-claude-code-subagents",
@@ -923,7 +1015,7 @@
       "compat": [
         "claude-code"
       ],
-      "stars": 26685,
+      "stars": 26686,
       "forks": 3036,
       "open_issues": 6,
       "pushed_at": "2026-11-02",
@@ -957,6 +1049,10 @@
       "source": "github-api"
     },
     {
+      "ko": "커서 룰 모음",
+      "ko_desc": "프레임워크별 .cursorrules 파일",
+      "rec": "보류",
+      "comment": "5개월 미갱신. Cursor 쓰면 참고만, 요즘은 AGENTS.md로 이동 중",
       "repo": "PatrickJS/awesome-cursorrules",
       "url": "https://github.com/PatrickJS/awesome-cursorrules",
       "name": "awesome-cursorrules",
@@ -967,7 +1063,7 @@
       "compat": [
         "cursor"
       ],
-      "stars": 41171,
+      "stars": 41172,
       "forks": 3550,
       "open_issues": 124,
       "pushed_at": "2026-05-30",
@@ -996,6 +1092,10 @@
       "source": "github-api"
     },
     {
+      "ko": "레플리카 (앱 클린룸 복제)",
+      "ko_desc": "참고 앱의 흐름을 분석해 코드·로고 안 베끼고 새로 만드는 11단계",
+      "rec": "선택",
+      "comment": "한일 소개팅 앱처럼 참고 서비스가 있을 때 기획 단계용. 7주 미갱신, 법적 조언 아님",
       "repo": "Jakeschincariol/replica-skill",
       "url": "https://github.com/Jakeschincariol/replica-skill",
       "name": "replica-skill",
@@ -1006,8 +1106,8 @@
       "compat": [
         "claude-code"
       ],
-      "stars": 10054,
-      "forks": 1843,
+      "stars": 10058,
+      "forks": 1844,
       "open_issues": 42,
       "pushed_at": "2026-10-03",
       "days_since_push": 47,

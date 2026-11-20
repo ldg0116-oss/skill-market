@@ -15,7 +15,7 @@
         "source": "github",
         "repo": "mattpocock/skills"
       },
-      "description": "[코딩·중급·94점] Skills for Real Engineers. Straight from my .agents directory.",
+      "description": "[코딩·추천·94점] 맷 포콕 실무 스킬 — grill-me(요구사항 캐묻기)·TDD 등 작고 날카로운 실무 스킬",
       "version": "2026-11-20",
       "author": {
         "name": "mattpocock"
@@ -37,7 +37,7 @@
         "source": "github",
         "repo": "affaan-m/everything-claude-code"
       },
-      "description": "[코딩·중급·94점] The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Code",
+      "description": "[코딩·선택·94점] 에브리씽 클로드 코드 (ECC) — 스킬+메모리+보안+리서치가 묶인 대형 종합 세트",
       "version": "2026-11-20",
       "author": {
         "name": "affaan-m"
@@ -57,7 +57,7 @@
         "source": "github",
         "repo": "anthropics/skills"
       },
-      "description": "[코딩·입문·92점] Public repository for Agent Skills",
+      "description": "[기획·문서·필수·92점] 앤트로픽 공식 스킬 — 워드·PDF·PPT·엑셀 생성 등 공식 스킬 모음. SKILL.md 형식의 기준",
       "version": "2026-11-20",
       "author": {
         "name": "anthropics"
@@ -65,7 +65,7 @@
       "homepage": "https://github.com/anthropics/skills",
       "license": "미표기",
       "keywords": [
-        "코딩",
+        "기획·문서",
         "skill",
         "입문",
         "claude-code",
@@ -79,7 +79,7 @@
         "source": "github",
         "repo": "addyosmani/agent-skills"
       },
-      "description": "[코딩·중급·92점] Production-grade engineering skills for AI coding agents.",
+      "description": "[코딩·추천·92점] 애디 오스마니 엔지니어링 스킬 — 스펙→구현→테스트→리뷰 프로덕션급 워크플로 24개",
       "version": "2026-11-20",
       "author": {
         "name": "addyosmani"
@@ -101,7 +101,7 @@
         "source": "github",
         "repo": "obra/superpowers"
       },
-      "description": "[코딩·중급·91점] An agentic skills framework & software development methodology that works.",
+      "description": "[코딩·추천·91점] 슈퍼파워 — 브레인스토밍→계획→TDD→리뷰를 강제하는 개발 방법론 스킬 세트",
       "version": "2026-11-20",
       "author": {
         "name": "obra"
@@ -123,7 +123,7 @@
         "source": "github",
         "repo": "anthropics/claude-plugins-official"
       },
-      "description": "[자동화·중급·79점] Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+      "description": "[자동화·추천·79점] 클로드 공식 플러그인 디렉터리 — /plugin > Discover 에 뜨는 공식 목록",
       "version": "2026-11-20",
       "author": {
         "name": "anthropics"
@@ -143,7 +143,7 @@
         "source": "github",
         "repo": "wshobson/agents"
       },
-      "description": "[코딩·중급·76점] Plugins, agents, skills, and commands for Claude Code, Codex CLI, Cursor, OpenCode, Antigravity CLI, GitHub Copilot, and Pi, written once in",
+      "description": "[코딩·선택·76점] 역할별 에이전트 마켓 — 85개 전문 에이전트·47개 스킬 플러그인 모음",
       "version": "2026-11-20",
       "author": {
         "name": "wshobson"
@@ -163,7 +163,7 @@
         "source": "github",
         "repo": "adobe/skills"
       },
-      "description": "[마케팅·콘텐츠·입문·70점] Adobe Skills for Agents",
+      "description": "[마케팅·콘텐츠·보류·70점] 어도비 스킬 — AEM·애널리틱스·커머스 등 어도비 제품용 108개",
       "version": "2026-11-20",
       "author": {
         "name": "adobe"
@@ -184,7 +184,7 @@
         "source": "github",
         "repo": "VoltAgent/awesome-claude-code-subagents"
       },
-      "description": "[코딩·중급·67점] A collection of 100+ specialized Claude Code subagents covering a wide range of development use cases",
+      "description": "[코딩·선택·67점] 서브에이전트 100선 — 서브에이전트 정의 파일 100개 이상",
       "version": "2026-11-20",
       "author": {
         "name": "VoltAgent"
@@ -204,7 +204,7 @@
         "source": "github",
         "repo": "Jakeschincariol/replica-skill"
       },
-      "description": "[기획·문서·중급·62점] Eleven free Claude skills that clone any app: reverse-engineer it, rebuild it, test it for bugs, then fix what its users hate. Free, MIT.",
+      "description": "[기획·문서·선택·62점] 레플리카 (앱 클린룸 복제) — 참고 앱의 흐름을 분석해 코드·로고 안 베끼고 새로 만드는 11단계",
       "version": "2026-11-20",
       "author": {
         "name": "Jakeschincariol"
