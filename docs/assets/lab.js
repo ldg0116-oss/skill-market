@@ -1,0 +1,1 @@
+document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{const el=document.getElementById(b.dataset.copy);const status=b.parentElement.querySelector('[role="status"]');try{await navigator.clipboard.writeText(el.value);status.textContent='복사했습니다.'}catch{el.focus();el.select();status.textContent='자동 복사가 지원되지 않습니다. 선택한 내용을 직접 복사해 주세요.'}}));

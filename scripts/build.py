@@ -136,7 +136,7 @@ for key, val in {
 }.items():
     page = page.replace(key, val)
 (ROOT / "docs").mkdir(exist_ok=True)
-(ROOT / "docs" / "index.html").write_text(page, encoding="utf-8")
+(ROOT / "docs" / "catalog.html").write_text(page, encoding="utf-8")
 (ROOT / "docs" / "skills.json").write_text(json.dumps(DATA, ensure_ascii=False), encoding="utf-8")
 
 # ---------- weekly report (블로그 초안 소재) ----------
@@ -160,3 +160,6 @@ lines += ["---", "블로그 글 소재: 신규·급상승 항목 중 1개를 골
 (ROOT / "reports" / f"weekly-{TODAY}.md").write_text("\n".join(lines), encoding="utf-8")
 (ROOT / "reports" / "latest.md").write_text("\n".join(lines), encoding="utf-8")
 print(f"marketplace {len(plugins)} plugins · catalog {len(SKILLS)} cards · reports/weekly-{TODAY}.md")
+
+from build_lab import build as build_lab
+build_lab()

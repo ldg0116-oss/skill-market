@@ -64,3 +64,14 @@ python scripts/collect.py --meta-only && python scripts/build.py
 ## 하지 않는 것
 
 자동 로그인, 무단 크롤링, 블로그 자동 게시. 설치 전 각 저장소의 README와 스크립트를 직접 확인하세요.
+
+## AI 활용 실험실 홈페이지 (2026-11-21)
+- 홈: docs/index.html, 기존 자동 수집 카탈로그: docs/catalog.html
+- 활용법 / 실험·비교 / 스킬 라이브러리 / AI 소식 / 소개 페이지 추가
+- 첫 실험: docs/experiment-001.html (실행 전 설계서)
+- 스킬 상세: docs/skill-clip.html (수동 적용용 v0.1 초안)
+- 실험 기록 및 스킬 문서: docs/downloads/
+- 생성 코드: scripts/build_lab.py. 기존 scripts/build.py가 카탈로그와 새 페이지를 함께 재생성합니다.
+- 검수: python scripts/check_site.py
+- 실측 영상·점수·성과는 아직 없으며 준비 상태로 표시합니다.
+- 블로그만 연결됨. 인스타그램과 JEJUINSIDER는 정확한 URL 확인 후 연결합니다.
