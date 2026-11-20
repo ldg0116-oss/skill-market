@@ -72,6 +72,7 @@ python scripts/collect.py --meta-only && python scripts/build.py
 - 스킬 상세: docs/skill-clip.html (수동 적용용 v0.1 초안)
 - 실험 기록 및 스킬 문서: docs/downloads/
 - 생성 코드: scripts/build_lab.py. 기존 scripts/build.py가 카탈로그와 새 페이지를 함께 재생성합니다.
+- 주간 추천: docs/picks.html. 매주 새로 올라온 스킬 가운데 시험해 볼 만한 것을 5개쯤 고릅니다. 자료는 data/picks.json(양식: data/picks.README.md)이고, scripts/build_lab.py가 읽어 페이지를 만듭니다. 문서만 보고 고른 것이며 직접 돌려 본 결과가 아닙니다.
 - 검수: python scripts/check_site.py
 - 실측 영상·점수·성과는 아직 없으며 준비 상태로 표시합니다.
 - 블로그만 연결됨. 인스타그램과 JEJUINSIDER는 정확한 URL 확인 후 연결합니다.
