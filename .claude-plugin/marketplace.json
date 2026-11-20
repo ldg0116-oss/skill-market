@@ -13,135 +13,9 @@
       "name": "skills",
       "source": {
         "source": "github",
-        "repo": "anthropics/skills"
-      },
-      "description": "[기획·문서·입문·97점] Public repository for Agent Skills — docx, pdf, pptx, xlsx and more",
-      "version": "2026-11-20",
-      "author": {
-        "name": "anthropics"
-      },
-      "homepage": "https://github.com/anthropics/skills",
-      "license": "Apache-2.0",
-      "keywords": [
-        "기획·문서",
-        "skill",
-        "입문",
-        "claude-code",
-        "claude.ai",
-        "codex"
-      ]
-    },
-    {
-      "name": "everything-claude-code",
-      "source": {
-        "source": "github",
-        "repo": "affaan-m/everything-claude-code"
-      },
-      "description": "[코딩·중급·94점] ECC — skills + memory + security + research workflow for Claude Code",
-      "version": "2026-11-20",
-      "author": {
-        "name": "affaan-m"
-      },
-      "homepage": "https://github.com/affaan-m/everything-claude-code",
-      "license": "MIT",
-      "keywords": [
-        "코딩",
-        "skill",
-        "중급",
-        "claude-code"
-      ]
-    },
-    {
-      "name": "superpowers",
-      "source": {
-        "source": "github",
-        "repo": "obra/superpowers"
-      },
-      "description": "[코딩·중급·91점] Skills framework: brainstorming → planning → TDD → review for coding agents",
-      "version": "2026-11-20",
-      "author": {
-        "name": "obra"
-      },
-      "homepage": "https://github.com/obra/superpowers",
-      "license": "MIT",
-      "keywords": [
-        "코딩",
-        "skill",
-        "중급",
-        "claude-code",
-        "codex",
-        "cursor"
-      ]
-    },
-    {
-      "name": "agent-skills",
-      "source": {
-        "source": "github",
-        "repo": "addyosmani/agent-skills"
-      },
-      "description": "[코딩·중급·77점] 24 production-grade engineering skills: spec → implement → test → review",
-      "version": "2026-11-20",
-      "author": {
-        "name": "addyosmani"
-      },
-      "homepage": "https://github.com/addyosmani/agent-skills",
-      "license": "MIT",
-      "keywords": [
-        "코딩",
-        "skill",
-        "중급",
-        "claude-code",
-        "codex",
-        "gemini-cli"
-      ]
-    },
-    {
-      "name": "agents",
-      "source": {
-        "source": "github",
-        "repo": "wshobson/agents"
-      },
-      "description": "[코딩·중급·76점] 94 Claude Code plugins: 85 agents, 47 skills",
-      "version": "2026-11-20",
-      "author": {
-        "name": "wshobson"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "keywords": [
-        "코딩",
-        "marketplace",
-        "중급",
-        "claude-code"
-      ]
-    },
-    {
-      "name": "awesome-claude-code-subagents",
-      "source": {
-        "source": "github",
-        "repo": "VoltAgent/awesome-claude-code-subagents"
-      },
-      "description": "[코딩·중급·67점] 100+ subagent definitions for Claude Code",
-      "version": "2026-11-20",
-      "author": {
-        "name": "VoltAgent"
-      },
-      "homepage": "https://github.com/VoltAgent/awesome-claude-code-subagents",
-      "license": "MIT",
-      "keywords": [
-        "코딩",
-        "agent",
-        "중급",
-        "claude-code"
-      ]
-    },
-    {
-      "name": "skills",
-      "source": {
-        "source": "github",
         "repo": "mattpocock/skills"
       },
-      "description": "[코딩·중급·66점] Small practical engineering skills (grill-me, TDD, grilling)",
+      "description": "[코딩·중급·94점] Skills for Real Engineers. Straight from my .agents directory.",
       "version": "2026-11-20",
       "author": {
         "name": "mattpocock"
@@ -158,41 +32,127 @@
       ]
     },
     {
+      "name": "ecc",
+      "source": {
+        "source": "github",
+        "repo": "affaan-m/everything-claude-code"
+      },
+      "description": "[코딩·중급·94점] The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Code",
+      "version": "2026-11-20",
+      "author": {
+        "name": "affaan-m"
+      },
+      "homepage": "https://github.com/affaan-m/ECC",
+      "license": "MIT",
+      "keywords": [
+        "코딩",
+        "skill",
+        "중급",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "skills",
+      "source": {
+        "source": "github",
+        "repo": "anthropics/skills"
+      },
+      "description": "[코딩·입문·92점] Public repository for Agent Skills",
+      "version": "2026-11-20",
+      "author": {
+        "name": "anthropics"
+      },
+      "homepage": "https://github.com/anthropics/skills",
+      "license": "미표기",
+      "keywords": [
+        "코딩",
+        "skill",
+        "입문",
+        "claude-code",
+        "claude.ai",
+        "codex"
+      ]
+    },
+    {
+      "name": "agent-skills",
+      "source": {
+        "source": "github",
+        "repo": "addyosmani/agent-skills"
+      },
+      "description": "[코딩·중급·92점] Production-grade engineering skills for AI coding agents.",
+      "version": "2026-11-20",
+      "author": {
+        "name": "addyosmani"
+      },
+      "homepage": "https://github.com/addyosmani/agent-skills",
+      "license": "MIT",
+      "keywords": [
+        "코딩",
+        "skill",
+        "중급",
+        "claude-code",
+        "codex",
+        "gemini-cli"
+      ]
+    },
+    {
+      "name": "superpowers",
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers"
+      },
+      "description": "[코딩·중급·91점] An agentic skills framework & software development methodology that works.",
+      "version": "2026-11-20",
+      "author": {
+        "name": "obra"
+      },
+      "homepage": "https://github.com/obra/superpowers",
+      "license": "MIT",
+      "keywords": [
+        "코딩",
+        "skill",
+        "중급",
+        "claude-code",
+        "codex",
+        "cursor"
+      ]
+    },
+    {
       "name": "claude-plugins-official",
       "source": {
         "source": "github",
         "repo": "anthropics/claude-plugins-official"
       },
-      "description": "[코딩·중급·65점] Official Claude Code plugin directory",
+      "description": "[자동화·중급·79점] Official, Anthropic-managed directory of high quality Claude Code Plugins.",
       "version": "2026-11-20",
       "author": {
         "name": "anthropics"
       },
       "homepage": "https://github.com/anthropics/claude-plugins-official",
-      "license": "미표기",
+      "license": "Apache-2.0",
       "keywords": [
-        "코딩",
+        "자동화",
         "marketplace",
         "중급",
         "claude-code"
       ]
     },
     {
-      "name": "replica-skill",
+      "name": "agents",
       "source": {
         "source": "github",
-        "repo": "Jakeschincariol/replica-skill"
+        "repo": "wshobson/agents"
       },
-      "description": "[기획·문서·중급·61점] 11-skill pack for clean-room app recreation",
+      "description": "[코딩·중급·76점] Plugins, agents, skills, and commands for Claude Code, Codex CLI, Cursor, OpenCode, Antigravity CLI, GitHub Copilot, and Pi, written once in",
       "version": "2026-11-20",
       "author": {
-        "name": "Jakeschincariol"
+        "name": "wshobson"
       },
-      "homepage": "https://github.com/Jakeschincariol/replica-skill",
+      "homepage": "https://github.com/wshobson/agents",
       "license": "MIT",
       "keywords": [
-        "기획·문서",
-        "skill",
+        "코딩",
+        "marketplace",
         "중급",
         "claude-code"
       ]
@@ -203,7 +163,7 @@
         "source": "github",
         "repo": "adobe/skills"
       },
-      "description": "[마케팅·콘텐츠·입문·58점] 108 Adobe skills: AEM, Analytics, Commerce",
+      "description": "[마케팅·콘텐츠·입문·70점] Adobe Skills for Agents",
       "version": "2026-11-20",
       "author": {
         "name": "adobe"
@@ -216,6 +176,46 @@
         "입문",
         "claude-code",
         "cursor"
+      ]
+    },
+    {
+      "name": "awesome-claude-code-subagents",
+      "source": {
+        "source": "github",
+        "repo": "VoltAgent/awesome-claude-code-subagents"
+      },
+      "description": "[코딩·중급·67점] A collection of 100+ specialized Claude Code subagents covering a wide range of development use cases",
+      "version": "2026-11-20",
+      "author": {
+        "name": "VoltAgent"
+      },
+      "homepage": "https://github.com/VoltAgent/awesome-claude-code-subagents",
+      "license": "MIT",
+      "keywords": [
+        "코딩",
+        "agent",
+        "중급",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "replica-skill",
+      "source": {
+        "source": "github",
+        "repo": "Jakeschincariol/replica-skill"
+      },
+      "description": "[기획·문서·중급·62점] Eleven free Claude skills that clone any app: reverse-engineer it, rebuild it, test it for bugs, then fix what its users hate. Free, MIT.",
+      "version": "2026-11-20",
+      "author": {
+        "name": "Jakeschincariol"
+      },
+      "homepage": "https://github.com/Jakeschincariol/replica-skill",
+      "license": "MIT",
+      "keywords": [
+        "기획·문서",
+        "skill",
+        "중급",
+        "claude-code"
       ]
     }
   ]
