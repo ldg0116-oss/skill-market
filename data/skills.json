@@ -48,7 +48,15 @@
         "완성도(자동)": 20,
         "합계": 94
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "개발자 한 사람이 자기가 쓰는 스킬을 공개한 묶음입니다. 계획의 빈틈을 질문으로 캐묻는 grill-me처럼 작은 스킬을 하나씩 골라 쓸 수 있습니다.",
+      "publisher": {
+        "login": "mattpocock",
+        "name": "Matt Pocock",
+        "kind": "user",
+        "verified": null,
+        "website": "https://aihero.dev"
+      }
     },
     {
       "ko": "에브리씽 클로드 코드 (ECC)",
@@ -96,7 +104,15 @@
         "완성도(자동)": 20,
         "합계": 94
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "Claude Code 같은 코딩용 AI 도구에 스킬, 기억, 보안, 조사 절차를 한꺼번에 얹는 큰 묶음입니다. 하나씩 고르는 것이 아니라 통째로 들어오는 종합 세트입니다.",
+      "publisher": {
+        "login": "affaan-m",
+        "name": "Affaan Mustafa",
+        "kind": "user",
+        "verified": null,
+        "website": "https://affaanmustafa.com"
+      }
     },
     {
       "ko": "앤트로픽 공식 스킬",
@@ -140,7 +156,15 @@
         "완성도(자동)": 20,
         "합계": 92
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "Claude를 만든 Anthropic이 직접 공개한 스킬 모음입니다. 워드·PDF·발표 자료·엑셀 파일을 만드는 스킬과, 스킬을 새로 만들 때 본보기로 삼을 예시가 들어 있습니다.",
+      "publisher": {
+        "login": "anthropics",
+        "name": "Anthropic",
+        "kind": "org",
+        "verified": true,
+        "website": "https://anthropic.com"
+      }
     },
     {
       "ko": "애디 오스마니 엔지니어링 스킬",
@@ -189,7 +213,15 @@
         "완성도(자동)": 19,
         "합계": 92
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "코딩용 AI가 기획서 → 구현 → 테스트 → 검토를 정해진 순서로 하게 만드는 개발 스킬 묶음입니다. 프로그램을 만드는 사람을 위한 것입니다.",
+      "publisher": {
+        "login": "addyosmani",
+        "name": "Addy Osmani",
+        "kind": "user",
+        "verified": null,
+        "website": "https://www.addyosmani.com"
+      }
     },
     {
       "ko": "슈퍼파워",
@@ -241,7 +273,15 @@
         "완성도(자동)": 20,
         "합계": 91
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "코딩용 AI가 생각 정리 → 계획 → 테스트 먼저 → 검토 순서를 지키게 만드는 개발 방법 스킬 묶음입니다. 프로그램을 만드는 사람을 위한 것입니다.",
+      "publisher": {
+        "login": "obra",
+        "name": "Jesse Vincent",
+        "kind": "user",
+        "verified": null,
+        "website": "http://fsck.com"
+      }
     },
     {
       "ko": "MCP 서버 총목록",
@@ -283,7 +323,15 @@
         "완성도(자동)": 17,
         "합계": 91
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "MCP 서버(AI에 외부 도구와 서비스를 연결하는 장치)를 분야별로 모아 둔 목록입니다. 설치하는 것이 아니라, 필요한 연결 장치를 찾아보는 지도입니다.",
+      "publisher": {
+        "login": "punkpeye",
+        "name": "Frank Fiegel",
+        "kind": "user",
+        "verified": null,
+        "website": "https://glama.ai"
+      }
     },
     {
       "ko": "코덱스 CLI",
@@ -322,7 +370,15 @@
         "완성도(자동)": 20,
         "합계": 90
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "OpenAI가 만든 코딩용 AI 도구 Codex의 본체입니다. 스킬이 아니라, 스킬을 얹어서 쓰는 바탕 프로그램입니다.",
+      "publisher": {
+        "login": "openai",
+        "name": "OpenAI",
+        "kind": "org",
+        "verified": true,
+        "website": "https://openai.com/"
+      }
     },
     {
       "ko": "제미나이 CLI",
@@ -369,7 +425,15 @@
         "완성도(자동)": 18,
         "합계": 89
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "구글의 AI Gemini를 터미널(명령 입력 창)에서 쓰는 도구의 본체입니다. 스킬이 아니라, 스킬을 얹어서 쓰는 바탕 프로그램입니다.",
+      "publisher": {
+        "login": "google-gemini",
+        "name": "google-gemini",
+        "kind": "org",
+        "verified": false,
+        "website": "https://ai.google.dev/gemini-api/docs"
+      }
     },
     {
       "ko": "n8n 워크플로 자동화",
@@ -429,7 +493,15 @@
         "완성도(자동)": 20,
         "합계": 86
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "여러 앱과 서비스를 선으로 이어 반복 업무를 자동으로 돌리는 자동화 프로그램입니다. 스킬이 아니라 따로 설치해 쓰는 프로그램이고, AI 기능을 붙일 수 있습니다.",
+      "publisher": {
+        "login": "n8n-io",
+        "name": "n8n - Workflow Automation",
+        "kind": "org",
+        "verified": true,
+        "website": "https://n8n.io"
+      }
     },
     {
       "ko": "MCP 공식 레퍼런스 서버",
@@ -468,7 +540,15 @@
         "완성도(자동)": 17,
         "합계": 82
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "MCP(AI에 외부 도구를 연결하는 표준)를 만든 쪽이 공개한 기준 예제 모음입니다. 연결 장치가 어떻게 생겼는지 배우는 표본에 가깝습니다.",
+      "publisher": {
+        "login": "modelcontextprotocol",
+        "name": "Model Context Protocol",
+        "kind": "org",
+        "verified": true,
+        "website": "https://modelcontextprotocol.io"
+      }
     },
     {
       "ko": "코파일럿 프롬프트 모음",
@@ -516,7 +596,15 @@
         "완성도(자동)": 12,
         "합계": 80
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "GitHub의 코딩 도우미 Copilot을 더 잘 쓰기 위한 지시문, 에이전트, 스킬, 설정을 사용자들이 모은 GitHub 공식 모음입니다. Copilot을 쓰는 사람을 위한 것입니다.",
+      "publisher": {
+        "login": "github",
+        "name": "GitHub",
+        "kind": "org",
+        "verified": true,
+        "website": "https://github.com/about"
+      }
     },
     {
       "ko": "스킬 설치기 (skills.sh)",
@@ -559,7 +647,15 @@
         "완성도(자동)": 12,
         "합계": 80
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "스킬을 찾아서 내 AI 도구에 설치해 주는 명령줄 도구입니다. 스킬 자체가 아니라 스킬을 설치하는 도구이고, 스킬 장터 skills.sh와 짝을 이룹니다.",
+      "publisher": {
+        "login": "vercel-labs",
+        "name": "Vercel Labs",
+        "kind": "org",
+        "verified": true,
+        "website": "https://vercel.com"
+      }
     },
     {
       "ko": "클로드 공식 플러그인 디렉터리",
@@ -602,7 +698,15 @@
         "완성도(자동)": 12,
         "합계": 79
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "Anthropic이 직접 관리하는 Claude Code 플러그인 목록입니다. Claude Code 안에서 플러그인을 찾을 때 보이는 그 목록입니다.",
+      "publisher": {
+        "login": "anthropics",
+        "name": "Anthropic",
+        "kind": "org",
+        "verified": true,
+        "website": "https://anthropic.com"
+      }
     },
     {
       "ko": "컨텍스트7",
@@ -649,7 +753,15 @@
         "완성도(자동)": 14,
         "합계": 78
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "AI가 코드를 짤 때 프로그램 부품(라이브러리)의 최신 공식 문서를 바로 찾아 읽게 해 주는 연결 장치(MCP)입니다. 오래된 정보로 틀린 코드를 쓰는 일을 줄이려는 것입니다.",
+      "publisher": {
+        "login": "upstash",
+        "name": "Upstash",
+        "kind": "org",
+        "verified": false,
+        "website": "https://upstash.com"
+      }
     },
     {
       "ko": "클로드 코드 리소스 모음",
@@ -708,7 +820,15 @@
         "완성도(자동)": 13,
         "합계": 77
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "Claude Code용 스킬, 명령, 도구, 안내 글을 한 사람이 골라 모아 둔 목록입니다. 설치하는 것이 아니라 찾아보는 목록입니다.",
+      "publisher": {
+        "login": "hesreallyhim",
+        "name": "Really Him",
+        "kind": "user",
+        "verified": null,
+        "website": "https://reponomics.org"
+      }
     },
     {
       "ko": "역할별 에이전트 마켓",
@@ -768,7 +888,15 @@
         "완성도(자동)": 12,
         "합계": 76
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "Claude Code, Codex, Cursor 같은 여러 코딩용 AI 도구에서 쓰는 역할별 에이전트와 스킬, 명령을 모아 둔 개인 장터입니다. 필요한 것만 골라 설치합니다.",
+      "publisher": {
+        "login": "wshobson",
+        "name": "Seth Hobson",
+        "kind": "user",
+        "verified": null,
+        "website": "https://major7apps.com"
+      }
     },
     {
       "ko": "클로드 코드 템플릿 CLI",
@@ -818,7 +946,15 @@
         "완성도(자동)": 11,
         "합계": 75
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "Claude Code에 넣을 에이전트, 명령, 스킬, 설정을 골라 한 번에 설치해 주는 도구와 그 목록입니다. 처음 환경을 꾸밀 때 씁니다.",
+      "publisher": {
+        "login": "davila7",
+        "name": "Daniel Avila",
+        "kind": "user",
+        "verified": null,
+        "website": "https://danielavila.me"
+      }
     },
     {
       "ko": "MCP 입문 강좌",
@@ -872,7 +1008,15 @@
         "완성도(자동)": 9,
         "합계": 75
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "마이크로소프트가 만든 MCP 입문 강좌입니다. 설치하는 도구가 아니라, MCP가 무엇인지 기초부터 배우는 교재입니다.",
+      "publisher": {
+        "login": "microsoft",
+        "name": "Microsoft",
+        "kind": "org",
+        "verified": true,
+        "website": "https://opensource.microsoft.com"
+      }
     },
     {
       "ko": "플레이라이트 MCP (브라우저 자동화)",
@@ -914,7 +1058,15 @@
         "완성도(자동)": 11,
         "합계": 74
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "AI가 웹 브라우저를 직접 열고 클릭하고 입력하게 해 주는 마이크로소프트의 연결 장치(MCP)입니다. 웹에서 하는 반복 작업을 AI에게 맡길 때 씁니다.",
+      "publisher": {
+        "login": "microsoft",
+        "name": "Microsoft",
+        "kind": "org",
+        "verified": true,
+        "website": "https://opensource.microsoft.com"
+      }
     },
     {
       "ko": "깃허브 MCP 서버",
@@ -957,7 +1109,15 @@
         "완성도(자동)": 11,
         "합계": 74
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "AI가 GitHub의 저장소, 이슈, 변경 요청을 읽고 다루게 해 주는 GitHub 공식 연결 장치(MCP)입니다. GitHub로 코드를 관리하는 사람에게 쓸모가 있습니다.",
+      "publisher": {
+        "login": "github",
+        "name": "GitHub",
+        "kind": "org",
+        "verified": true,
+        "website": "https://github.com/about"
+      }
     },
     {
       "ko": "에이전트 스킬 공개 표준",
@@ -998,7 +1158,15 @@
         "완성도(자동)": 10,
         "합계": 74
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "스킬(Agent Skills)의 형식을 정한 공개 규격과 설명 문서입니다. 설치하는 것이 아니라, 스킬이 무엇이고 어떻게 만드는지 읽는 자료입니다.",
+      "publisher": {
+        "login": "agentskills",
+        "name": "Agent Skills",
+        "kind": "org",
+        "verified": true,
+        "website": "https://agentskills.io"
+      }
     },
     {
       "ko": "어도비 스킬",
@@ -1042,7 +1210,15 @@
         "완성도(자동)": 8,
         "합계": 70
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "어도비가 자사 제품(홈페이지 관리, 분석, 쇼핑몰 도구 등)을 AI로 다루도록 공개한 스킬 모음입니다. 어도비의 기업용 제품을 쓰는 곳을 위한 것입니다.",
+      "publisher": {
+        "login": "adobe",
+        "name": "Adobe, Inc.",
+        "kind": "org",
+        "verified": true,
+        "website": "https://adobe.com"
+      }
     },
     {
       "ko": "서브에이전트 100선",
@@ -1092,7 +1268,15 @@
         "완성도(자동)": 10,
         "합계": 67
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "Claude Code에서 쓰는 역할별 하위 에이전트(특정 일을 맡는 AI 일꾼)의 설정 파일을 100개 넘게 모아 둔 곳입니다. 그대로 쓰기보다 내 것을 만들 때 참고하는 예시에 가깝습니다.",
+      "publisher": {
+        "login": "VoltAgent",
+        "name": "VoltAgent",
+        "kind": "org",
+        "verified": true,
+        "website": "https://voltagent.dev"
+      }
     },
     {
       "ko": "커서 룰 모음",
@@ -1137,7 +1321,15 @@
         "완성도(자동)": 12,
         "합계": 65
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "AI 코드 편집기 Cursor가 따를 규칙 파일을 개발 도구별로 모아 둔 목록입니다. Cursor를 쓰는 사람을 위한 것입니다.",
+      "publisher": {
+        "login": "PatrickJS",
+        "name": "PatrickJS",
+        "kind": "user",
+        "verified": null,
+        "website": "patrickjs.com"
+      }
     },
     {
       "ko": "레플리카 (앱 클린룸 복제)",
@@ -1186,7 +1378,15 @@
         "완성도(자동)": 9,
         "합계": 62
       },
-      "source": "github-api"
+      "source": "github-api",
+      "what": "참고할 앱의 동작을 분석해 비슷한 기능의 앱을 새로 만들고, 오류를 시험하고 고치는 절차를 담은 Claude 스킬 묶음입니다. 남의 앱을 본뜨는 일이라 저작권과 약관을 따져 봐야 합니다.",
+      "publisher": {
+        "login": "Jakeschincariol",
+        "name": "Jake Schincariol",
+        "kind": "user",
+        "verified": null,
+        "website": "jakeschincariol.co"
+      }
     }
   ]
 }

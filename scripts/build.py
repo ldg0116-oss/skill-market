@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""data/skills.json → .claude-plugin/marketplace.json, docs/index.html, docs/skills.json, reports/weekly-YYYY-MM-DD.md"""
+"""data/skills.json → .claude-plugin/marketplace.json, docs/index.html, docs/skills.json, reports/weekly-YYYY-MM-DD.md
+
+화면 틀은 scripts/template.html 에 있고, 여기서는 카드와 숫자를 채워 넣는다.
+"""
 import json, html
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -13,6 +16,7 @@ TODAY = datetime.now(KST).strftime("%Y-%m-%d")
 CATS = DATA["categories"]
 SKILLS = DATA["skills"]
 TOP_PER_CAT = 5
+E = html.escape
 
 # 설치 명령 (유형별)
 def install_cmd(s):
@@ -36,6 +40,26 @@ def install_cmd(s):
     if t == "mcp":
         return f"claude mcp add <name> -- npx -y <package>  (README 확인)"
     return f"git clone https://github.com/{repo}"
+
+
+# ---------- 올린 곳 ----------
+# 공식 = seeds.json 에서 official 로 표시한 저장소(그 제품·규격을 만든 곳이 직접 올린 것).
+# 단체/개인 = GitHub 계정 종류. verified = GitHub가 그 조직의 도메인을 확인했는지(collect.py 가 API로 받음).
+PUB_KINDS = [("official", "공식"), ("org", "단체"), ("user", "개인"), ("unknown", "미확인")]
+
+def pub_of(s):
+    p = s.get("publisher") or {}
+    key = "official" if s.get("official") else {"org": "org", "user": "user"}.get(p.get("kind"), "unknown")
+    return {"key": key, "label": dict(PUB_KINDS)[key], "name": p.get("name") or s["owner"], "login": p.get("login") or s["owner"],
+            "verified": p.get("verified") is True, "is_org": p.get("kind") == "org"}
+
+def pub_text(s):
+    p = pub_of(s)
+    return f"{p['name']} ({p['label']}{', GitHub 인증' if p['verified'] else ''})"
+
+# 유형을 쉬운 말로
+TYPE_KO = {"skill": "스킬 묶음", "marketplace": "플러그인 장터", "agent": "에이전트 모음", "mcp": "연결 장치(MCP)", "curation": "목록 모음",
+           "education": "강좌·문서", "tool": "설치 도구", "rules": "규칙 모음", "host": "AI 도구 본체", "automation": "자동화 프로그램"}
 
 
 # ---------- marketplace.json ----------
@@ -67,27 +91,31 @@ def fmt_stars(n):
     return f"{n/1000:.1f}k" if n >= 1000 else str(n)
 
 def card(s, rec):
-    sc = s["score"]
-    compat = " ".join(f"<span class=tag>{html.escape(c)}</span>" for c in s.get("compat", [])[:4])
+    sc, p = s["score"], pub_of(s)
     grade = s.get("rec") or ("추천" if rec else "")
-    badge = f"<span class='rec g-{grade}'>{grade}</span>" if grade else ""
-    off = "<span class=off>공식</span>" if s["official"] else ""
-    stale = f"<span class=stale>{s['days_since_push']}일 전</span>" if s["days_since_push"] > 90 else f"<span class=fresh>{s['pushed_at']}</span>"
-    title = html.escape(s.get("ko") or s["repo"])
-    sub = html.escape(s["repo"]) if s.get("ko") else ""
-    desc = html.escape(s.get("ko_desc") or s["description"] or "")
-    comment = f"<p class=cmt>{html.escape(s['comment'])}</p>" if s.get("comment") else ""
+    badge = f'<span class="grade g-{E(grade)}">{E(grade)}</span>' if grade else ""
+    title = E(s.get("ko") or s["repo"])
+    ver = '<span class="ver" title="GitHub가 이 계정의 회사 도메인을 확인했습니다">✓ GitHub 인증</span>' if p["verified"] else ""
+    avatar = f'<img class="{"org" if p["is_org"] else "usr"}" src="https://github.com/{E(p["login"])}.png?size=44" alt="" width="22" height="22" loading="lazy" onerror="this.remove()">'
+    tag = f'<p class="c-tag">{E(s.get("ko_desc") or s["description"] or "")}</p>' if (s.get("ko_desc") or s["description"]) else ""
+    what = f'<p class="c-what">{E(s["what"])}</p>' if s.get("what") else ""
+    cmt = f'<p class="c-cmt"><b>한 줄 평</b>{E(s["comment"])}</p>' if s.get("comment") else ""
+    pc = ""
     if s.get("pros") or s.get("cons"):
-        comment += f"<div class=pc><span class=pro>＋ {html.escape(s.get('pros',''))}</span><span class=con>－ {html.escape(s.get('cons',''))}</span></div>"
-    search = f"{s['repo']} {s.get('ko','')} {s.get('ko_desc','')} {s['description']} {s.get('comment','')}".lower()
-    return f"""<article class=card data-cat="{html.escape(s['category'])}" data-type="{s['type']}" data-diff="{s['difficulty']}" data-name="{html.escape(search)}">
-  <header><a href="{s['url']}" target=_blank rel=noopener>{title}</a> {badge}{off}</header>
-  {f'<div class=sub>{sub}</div>' if sub else ''}
-  <p class=desc>{desc}</p>{comment}
-  <div class=meta><span>★ {fmt_stars(s['stars'])}</span> {stale} <span>{html.escape(s['license'])}</span> <span>{s['type']}</span> <span>{s['difficulty']}</span></div>
-  <div class=tags>{compat}</div>
-  <div class=score title="실용성 {sc['실용성(자동)']} · 설치 {sc['설치편의']} · 완성도 {sc['완성도(자동)']} · 유지보수 {sc['유지보수']} · 비용 {sc['비용']} · 보안 {sc['보안']}"><b>{sc['합계']}</b>/100</div>
-  <div class=install><code>{html.escape(install_cmd(s))}</code><button onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent)">복사</button></div>
+        pc = '<ul class="c-pc">' + (f'<li class="pro"><b>장점</b><span>{E(s["pros"])}</span></li>' if s.get("pros") else "") \
+             + (f'<li class="con"><b>주의</b><span>{E(s["cons"])}</span></li>' if s.get("cons") else "") + "</ul>"
+    fresh = f'<span class="old">갱신 {s["days_since_push"]}일 전</span>' if s["days_since_push"] > 90 else f'<span>갱신 {E(s["pushed_at"])}</span>'
+    compat = "".join(f'<span class="works">{E(c)}</span>' for c in s.get("compat", [])[:4])
+    search = " ".join([s["repo"], s.get("ko", ""), s.get("ko_desc", ""), s.get("what", ""), s["description"] or "", s.get("comment", ""),
+                       p["name"], p["label"], TYPE_KO.get(s["type"], s["type"])]).lower()
+    parts = f"실용성 {sc['실용성(자동)']}/25 · 설치 편의 {sc['설치편의']}/15 · 완성도 {sc['완성도(자동)']}/20 · 유지보수 {sc['유지보수']}/15 · 비용 {sc['비용']}/10 · 보안·신뢰 {sc['보안']}/15"
+    return f"""<article class="card" data-cat="{E(s['category'])}" data-pub="{p['key']}" data-score="{sc['합계']}" data-stars="{s['stars']}" data-pushed="{E(s['pushed_at'])}" data-name="{E(search)}">
+  <header class="c-head"><h2><a href="{E(s['url'])}" target="_blank" rel="noopener">{title}</a></h2>{badge}<span class="stars" title="GitHub 별 수">★ {fmt_stars(s['stars'])}</span></header>
+  <div class="c-pub">{avatar}<span class="who">{E(p['name'])}</span><span class="kind k-{p['key']}">{p['label']}</span>{ver}<a class="repo" href="{E(s['url'])}" target="_blank" rel="noopener">{E(s['repo'])}</a></div>
+  {tag}{what}{cmt}{pc}
+  <div class="c-meta"><span>{E(TYPE_KO.get(s['type'], s['type']))}</span><span>난이도 {E(s['difficulty'])}</span><span>라이선스 {E(s['license'])}</span>{fresh}{compat}</div>
+  <details class="c-score"><summary><span>점수</span><b>{sc['합계']}</b><span class="bar"><i style="width:{min(100, sc['합계'])}%"></i></span><span class="more">내역</span></summary><p class="parts">{parts}</p></details>
+  <div class="c-install"><code>{E(install_cmd(s))}</code><button type="button" class="copy">복사</button></div>
 </article>"""
 
 cards = []
@@ -95,47 +123,18 @@ for cat in CATS:
     items = [s for s in SKILLS if s["category"] == cat]
     for i, s in enumerate(items):
         cards.append(card(s, i < TOP_PER_CAT))
-cat_btns = "".join(f'<button data-f="{html.escape(c)}">{html.escape(c)} <small>{sum(1 for s in SKILLS if s["category"]==c)}</small></button>' for c in CATS)
+cat_btns = "".join(f'<button type="button" class="chip" data-f="{E(c)}" aria-pressed="false">{E(c)} <small>{sum(1 for s in SKILLS if s["category"]==c)}</small></button>' for c in CATS)
+pub_counts = {k: sum(1 for s in SKILLS if pub_of(s)["key"] == k) for k, _ in PUB_KINDS}
+pub_btns = "".join(f'<button type="button" class="chip" data-p="{k}" aria-pressed="false">{label} <small>{pub_counts[k]}</small></button>' for k, label in PUB_KINDS if pub_counts[k])
 new_list = ", ".join(DIFF.get("new", [])[:10]) or "없음"
 jump = ", ".join(f"{j['repo']}({j['from']}→{j['to']})" for j in DIFF.get("star_jump", [])[:10]) or "없음"
 
-page = f"""<!doctype html><html lang=ko><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
-<title>스킬 마켓</title>
-<meta name=description content="GitHub AI 스킬·MCP·에이전트 저장소를 주 1회 수집·검증·분류. 카테고리별 추천과 설치 명령.">
-<style>
-:root{{--bg:#fff;--fg:#111;--mut:#666;--line:#e5e5e5;--card:#fafafa;--acc:#0e4e33;--acc2:#eea51b}}
-@media(prefers-color-scheme:dark){{:root:not([data-theme=light]){{--bg:#111;--fg:#eee;--mut:#999;--line:#2a2a2a;--card:#181818;--acc:#4caf7a}}}}
-:root[data-theme=dark]{{--bg:#111;--fg:#eee;--mut:#999;--line:#2a2a2a;--card:#181818;--acc:#4caf7a}}
-*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}}
-.wrap{{max-width:1100px;margin:0 auto;padding:24px 16px}}h1{{font-size:24px;margin:0 0 4px}}.sub{{color:var(--mut);margin:0 0 16px;font-size:13px}}
-.bar{{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 20px;align-items:center}}.bar button{{border:1px solid var(--line);background:var(--card);color:var(--fg);padding:6px 12px;border-radius:20px;cursor:pointer;font-size:13px}}
-.bar button.on{{background:var(--acc);color:#fff;border-color:var(--acc)}}.bar input{{flex:1;min-width:160px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg)}}
-.grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}}.card{{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:6px}}
-.card header{{font-weight:600;display:flex;gap:6px;align-items:center;flex-wrap:wrap}}.card a{{color:var(--fg);text-decoration:none}}.card a:hover{{text-decoration:underline}}
-.desc{{margin:0;color:var(--mut);font-size:13px;min-height:38px}}.meta{{font-size:12px;color:var(--mut);display:flex;gap:10px;flex-wrap:wrap}}
-.tags .tag{{font-size:11px;border:1px solid var(--line);border-radius:6px;padding:1px 6px;margin-right:4px;color:var(--mut)}}
-.rec{{font-size:11px;background:var(--acc2);color:#111;border-radius:6px;padding:1px 6px}}.g-필수{{background:#c0392b;color:#fff}}.g-선택{{background:var(--line);color:var(--fg)}}.g-보류{{background:transparent;border:1px solid var(--line);color:var(--mut)}}
-.pc{{display:flex;flex-direction:column;gap:2px;font-size:12px}}.pro{{color:var(--acc)}}.con{{color:#c0392b}}
-.sub{{font-size:11px;color:var(--mut);margin-top:-4px}}.cmt{{margin:0;font-size:12.5px;border-left:2px solid var(--acc2);padding-left:8px;color:var(--fg)}}.off{{font-size:11px;background:var(--acc);color:#fff;border-radius:6px;padding:1px 6px}}
-.stale{{color:#c0392b}}.fresh{{color:var(--mut)}}.score{{font-size:12px;color:var(--mut)}}.score b{{color:var(--fg);font-size:14px}}
-.install{{display:flex;gap:6px;align-items:center;margin-top:auto}}.install code{{flex:1;font-size:11px;background:var(--bg);border:1px solid var(--line);padding:6px 8px;border-radius:6px;overflow-x:auto;white-space:nowrap}}
-.install button{{font-size:12px;padding:5px 10px;border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:6px;cursor:pointer}}
-.note{{font-size:13px;color:var(--mut);border-left:3px solid var(--acc2);padding:6px 12px;margin:0 0 16px;background:var(--card)}}
-footer{{margin-top:32px;font-size:12px;color:var(--mut)}}
-</style></head><body><div class=wrap>
-<h1>스킬 마켓</h1>
-<p class=sub>갱신 {html.escape(DATA['generated_at'][:10])} · {len(SKILLS)}개 저장소 · Claude Code에서 <code>/plugin marketplace add ldg0116-oss/skill-market</code></p>
-<p class=note>이번 주 신규: {html.escape(new_list)} · 급상승: {html.escape(jump)}. 점수의 실용성·완성도는 ⭐ 기반 자동추정이며 사람 검증 전까지 참고용.</p>
-<div class=bar><button data-f="" class=on>전체 <small>{len(SKILLS)}</small></button>{cat_btns}<input id=q placeholder="검색: 이름·설명"></div>
-<div class=grid id=grid>{''.join(cards)}</div>
-<footer>출처: GitHub API (스냅샷 모드일 땐 data/snapshot.json). 라이선스 "미표기"는 API에 없다는 뜻. 설치 전 저장소 README·스크립트를 직접 확인하세요.</footer>
-</div>
-<script>
-const btns=[...document.querySelectorAll('.bar button')],q=document.getElementById('q'),cards=[...document.querySelectorAll('.card')];let f='';
-function apply(){{const s=q.value.trim().toLowerCase();cards.forEach(c=>{{c.style.display=((!f||c.dataset.cat===f)&&(!s||c.dataset.name.includes(s)))?'':'none'}})}}
-btns.forEach(b=>b.onclick=()=>{{btns.forEach(x=>x.classList.remove('on'));b.classList.add('on');f=b.dataset.f;apply();try{{localStorage.setItem('sm-f',f)}}catch(e){{}}}});
-q.oninput=apply;try{{const sv=localStorage.getItem('sm-f');if(sv){{const b=btns.find(x=>x.dataset.f===sv);if(b)b.click()}}}}catch(e){{}}
-</script></body></html>"""
+page = (Path(__file__).resolve().parent / "template.html").read_text(encoding="utf-8")
+for key, val in {
+    "__UPDATED__": E(DATA["generated_at"][:10]), "__COUNT__": str(len(SKILLS)), "__N_OFFICIAL__": str(pub_counts["official"]),
+    "__NEW__": E(new_list), "__JUMP__": E(jump), "__CAT_BTNS__": cat_btns, "__PUB_BTNS__": pub_btns, "__CARDS__": "\n".join(cards),
+}.items():
+    page = page.replace(key, val)
 (ROOT / "docs").mkdir(exist_ok=True)
 (ROOT / "docs" / "index.html").write_text(page, encoding="utf-8")
 (ROOT / "docs" / "skills.json").write_text(json.dumps(DATA, ensure_ascii=False), encoding="utf-8")
@@ -144,10 +143,10 @@ q.oninput=apply;try{{const sv=localStorage.getItem('sm-f');if(sv){{const b=btns.
 lines = [f"# 주간 스킬 리포트 {TODAY}", "", f"수집 {len(SKILLS)}개 · 신규 {len(DIFF.get('new', []))} · 급상승 {len(DIFF.get('star_jump', []))} · 90일 이상 미갱신 {len(DIFF.get('stale', []))}", ""]
 for cat in CATS:
     items = [s for s in SKILLS if s["category"] == cat][:TOP_PER_CAT]
-    lines += [f"## {cat} — 추천 {len(items)}", "", "| 스킬 | 등급 | ★ | 점수 | 장점 | 단점 | 한 줄 평 |", "| --- | --- | --- | --- | --- | --- | --- |"]
+    lines += [f"## {cat} — 추천 {len(items)}", "", "| 스킬 | 올린 곳 | 등급 | ★ | 점수 | 무엇인가 | 장점 | 단점 | 한 줄 평 |", "| --- | --- | --- | --- | --- | --- | --- | --- | --- |"]
     for s in items:
         nm = f"{s['ko']} ([{s['repo']}]({s['url']}))" if s.get("ko") else f"[{s['repo']}]({s['url']})"
-        lines.append(f"| {nm} | {s.get('rec','')} | {fmt_stars(s['stars'])} | {s['score']['합계']} | {s.get('pros','')} | {s.get('cons','')} | {s.get('comment','')} |")
+        lines.append(f"| {nm} | {pub_text(s)} | {s.get('rec','')} | {fmt_stars(s['stars'])} | {s['score']['합계']} | {s.get('what','')} | {s.get('pros','')} | {s.get('cons','')} | {s.get('comment','')} |")
     lines.append("")
 if DIFF.get("candidates"):
     lines += ["## 검토 대기 후보 (discover)", "", "| 저장소 | ★ | 설명 |", "| --- | --- | --- |"]

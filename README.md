@@ -28,12 +28,23 @@ GitHub의 AI 스킬·MCP 서버·에이전트 저장소를 **주 1회 자동 수
 | 비용 | 10 | 유료 의존 알려진 경우 7 |
 | 보안·신뢰 | 15 | 허용 라이선스 8 + 공식 저장소 7 |
 
+## 카드에 보이는 것
+
+- **무엇인가** — `data/ko.json`의 `what`. 개발 용어를 모르는 사람을 위해 풀어 쓴 설명(저장소 소개 글 기준, 써 본 평가 아님).
+- **올린 곳** — 저장소를 소유한 계정의 표시 이름과 구분.
+  - 공식: 그 제품·규격을 만든 회사·단체가 직접 올린 저장소 (`data/seeds.json`의 `official`)
+  - 단체 / 개인: GitHub 계정 종류
+  - ✓ GitHub 인증: GitHub가 그 조직의 도메인을 확인했다는 표시. 없다고 가짜라는 뜻은 아님
+  - 계정 정보는 GitHub API로 받아 `data/owners.json`에 30일 저장
+- 한 줄 평 · 장점 · 주의 · 종류 · 난이도 · 라이선스 · 갱신일 · 점수 내역 · 설치 명령
+
 ## 동작
 
 ```
 data/seeds.json ──→ scripts/collect.py ──→ data/skills.json, data/diff.json
                      (GitHub API; 불가 시 data/snapshot.json)
                                     └──→ scripts/build.py ──→ marketplace.json · docs/ · reports/
+                                         (화면 틀: scripts/template.html)
 ```
 
 - 스케줄: `.github/workflows/weekly.yml` — 매주 월요일 07:17 KST, 수동 실행 가능
@@ -45,6 +56,9 @@ data/seeds.json ──→ scripts/collect.py ──→ data/skills.json, data/di
 ```
 pip install requests
 python scripts/collect.py && python scripts/build.py
+
+# 별 수·갱신일은 그대로 두고 한글 설명(ko.json)과 올린 곳 정보만 다시 반영
+python scripts/collect.py --meta-only && python scripts/build.py
 ```
 
 ## 하지 않는 것

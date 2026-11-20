@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>스킬 마켓 — AI 스킬을 한국어 설명과 함께</title>
+<meta name="description" content="GitHub에 공개된 AI 스킬·연결 장치(MCP)·에이전트를 주 1회 모아, 무엇을 하는 것인지와 누가 올렸는지, 장단점과 설치 방법을 한국어로 정리합니다.">
+<meta property="og:title" content="스킬 마켓">
+<meta property="og:description" content="AI 스킬이 무엇을 하는지, 누가 올렸는지, 장단점과 설치 방법을 한국어로 정리합니다. 주 1회 갱신.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+/* 배치: 머리말 → 보는 법 → 고정 도구줄(찾기·분야·올린 곳·정렬) → 카드 격자 → 꼬리말 */
+:root {
+  --bg: #f6f7f3; --panel: #ffffff; --ink: #15201a; --mut: #5d6a62; --line: #dde4dd; --soft: #eef2ec;
+  --acc: #0e5c3b; --acc-soft: #e2f0e7; --amb: #9a5b00; --amb-soft: #fcefd3; --red: #b3261e; --red-soft: #fbe6e3;
+  --font: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", Consolas, "D2Coding", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1412; --panel: #171d1a; --ink: #e7ece8; --mut: #98a39c; --line: #2a332e; --soft: #1c2420;
+    --acc: #5fcf98; --acc-soft: #16291f; --amb: #f0b24a; --amb-soft: #33280f; --red: #f08a80; --red-soft: #3a1c19;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1412; --panel: #171d1a; --ink: #e7ece8; --mut: #98a39c; --line: #2a332e; --soft: #1c2420;
+  --acc: #5fcf98; --acc-soft: #16291f; --amb: #f0b24a; --amb-soft: #33280f; --red: #f08a80; --red-soft: #3a1c19;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.6 var(--font); }
+a { color: inherit; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 28px 16px 56px; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; }
+
+/* 머리말 */
+.top h1 { font-size: 30px; line-height: 1.2; margin: 0 0 6px; letter-spacing: -0.02em; }
+.top .lede { margin: 0; color: var(--mut); max-width: 62ch; }
+.facts { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 14px 0 0; padding: 0; list-style: none; font-size: 13.5px; color: var(--mut); }
+.facts b { color: var(--ink); font-weight: 650; font-variant-numeric: tabular-nums; }
+.week { margin: 14px 0 0; font-size: 13.5px; background: var(--amb-soft); color: var(--ink); border-radius: 8px; padding: 8px 12px; }
+.week b { color: var(--amb); }
+
+/* 보는 법 */
+.guide { margin: 14px 0 0; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+.guide > summary { cursor: pointer; padding: 10px 14px; font-weight: 600; font-size: 14px; }
+.guide dl { margin: 0; padding: 0 14px 14px; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 6px 12px; font-size: 13.5px; }
+.guide dt { white-space: nowrap; }
+.guide dd { margin: 0; color: var(--mut); }
+
+/* 도구줄 */
+.tools { background: var(--bg); padding: 12px 0 10px; margin-top: 16px; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; }
+/* 넓은 화면에서만 도구줄을 위에 붙여 둔다. 좁은 화면에서는 자리를 너무 많이 차지한다. */
+@media (min-width: 900px) and (min-height: 640px) { .tools { position: sticky; top: 0; z-index: 5; } }
+.row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.row .lab { font-size: 12.5px; color: var(--mut); min-width: 52px; }
+.chip { border: 1px solid var(--line); background: var(--panel); color: var(--ink); padding: 5px 12px; border-radius: 999px; cursor: pointer; font: inherit; font-size: 13.5px; }
+.chip small { color: var(--mut); font-variant-numeric: tabular-nums; margin-left: 2px; }
+.chip[aria-pressed="true"] { background: var(--acc); border-color: var(--acc); color: var(--bg); }
+.chip[aria-pressed="true"] small { color: inherit; opacity: .8; }
+.find { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.find input { flex: 1 1 220px; min-width: 0; padding: 9px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); color: var(--ink); font: inherit; }
+.find select { padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); color: var(--ink); font: inherit; font-size: 13.5px; }
+.count { font-size: 13px; color: var(--mut); font-variant-numeric: tabular-nums; margin-left: auto; }
+
+/* 카드 */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 14px; margin-top: 16px; align-items: start; }
+.card { border: 1px solid var(--line); background: var(--panel); border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.c-head { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.c-head h2 { font-size: 17px; line-height: 1.35; margin: 0; letter-spacing: -0.01em; }
+.c-head h2 a { text-decoration: none; }
+.c-head h2 a:hover { text-decoration: underline; }
+.stars { margin-left: auto; font-size: 13px; color: var(--mut); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.grade { font-size: 11.5px; font-weight: 650; border-radius: 6px; padding: 1px 7px; white-space: nowrap; }
+.g-필수 { background: var(--red); color: var(--bg); }
+.g-추천 { background: var(--amb-soft); color: var(--amb); }
+.g-선택 { background: var(--soft); color: var(--ink); }
+.g-보류 { border: 1px dashed var(--line); color: var(--mut); }
+
+.c-pub { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 13px; }
+.c-pub img { width: 22px; height: 22px; border-radius: 50%; background: var(--soft); flex: none; }
+.c-pub img.org { border-radius: 5px; }
+.c-pub .who { font-weight: 600; }
+.kind { font-size: 11.5px; font-weight: 650; border-radius: 6px; padding: 1px 7px; white-space: nowrap; }
+.k-official { background: var(--acc); color: var(--bg); }
+.k-org { border: 1px solid var(--acc); color: var(--acc); }
+.k-user { border: 1px solid var(--line); color: var(--ink); }
+.k-unknown { border: 1px dashed var(--line); color: var(--mut); }
+.ver { font-size: 11.5px; color: var(--acc); white-space: nowrap; }
+.c-pub .repo { color: var(--mut); font-family: var(--mono); font-size: 12px; overflow-wrap: anywhere; text-decoration: none; }
+.c-pub .repo:hover { text-decoration: underline; }
+
+.c-tag { margin: 0; font-weight: 600; font-size: 14.5px; }
+.c-what { margin: 0; font-size: 14.5px; }
+.c-cmt { margin: 0; font-size: 13.5px; background: var(--soft); border-radius: 8px; padding: 8px 10px; }
+.c-cmt b, .c-pc b { font-size: 12px; font-weight: 650; margin-right: 6px; white-space: nowrap; }
+.c-cmt b { color: var(--amb); }
+.c-pc { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font-size: 13.5px; }
+.c-pc li { display: grid; grid-template-columns: max-content minmax(0, 1fr); }
+.c-pc .pro b { color: var(--acc); }
+.c-pc .con b { color: var(--red); }
+.c-meta { display: flex; flex-wrap: wrap; gap: 5px; font-size: 12px; }
+.c-meta span { background: var(--soft); border-radius: 6px; padding: 1px 7px; color: var(--mut); white-space: nowrap; }
+.c-meta .old { background: var(--red-soft); color: var(--red); }
+.c-meta .works { background: none; border: 1px solid var(--line); }
+.c-score { font-size: 12.5px; color: var(--mut); }
+.c-score > summary { cursor: pointer; display: flex; align-items: center; gap: 8px; list-style: none; }
+.c-score > summary::-webkit-details-marker { display: none; }
+.c-score > summary b { color: var(--ink); font-size: 15px; font-variant-numeric: tabular-nums; }
+.c-score .bar { flex: 1; height: 6px; border-radius: 3px; background: var(--soft); overflow: hidden; max-width: 160px; }
+.c-score .bar i { display: block; height: 100%; background: var(--acc); }
+.c-score .more { text-decoration: underline; text-underline-offset: 2px; }
+.c-score .parts { margin: 6px 0 0; }
+.c-install { display: flex; gap: 6px; align-items: stretch; margin-top: auto; }
+.c-install code { flex: 1; min-width: 0; font: 12px/1.5 var(--mono); background: var(--soft); border-radius: 8px; padding: 8px 10px; overflow-x: auto; white-space: nowrap; }
+.c-install button { font: inherit; font-size: 12.5px; padding: 0 12px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 8px; cursor: pointer; white-space: nowrap; }
+.empty { margin: 28px 0; color: var(--mut); text-align: center; }
+footer { margin-top: 36px; font-size: 13px; color: var(--mut); border-top: 1px solid var(--line); padding-top: 16px; }
+footer ul { margin: 6px 0 0; padding-left: 18px; }
+@media (max-width: 520px) {
+  .top h1 { font-size: 25px; }
+  .row .lab { min-width: 100%; }
+  .count { margin-left: 0; width: 100%; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>스킬 마켓</h1>
+    <p class="lede">GitHub에 공개된 AI 스킬과 연결 장치를 주 1회 모아, 무엇을 하는 것인지와 누가 올렸는지, 장단점과 설치 방법을 한국어로 정리합니다.</p>
+    <ul class="facts">
+      <li>갱신 <b>__UPDATED__</b></li>
+      <li>저장소 <b>__COUNT__</b>곳</li>
+      <li>공식 저장소 <b>__N_OFFICIAL__</b>곳</li>
+      <li>Claude Code에서 한꺼번에 받기 <code>/plugin marketplace add ldg0116-oss/skill-market</code></li>
+    </ul>
+    <p class="week"><b>이번 주</b> 새로 들어온 것: __NEW__ · 별이 크게 늘어난 것: __JUMP__</p>
+    <details class="guide">
+      <summary>표시 보는 법</summary>
+      <dl>
+        <dt><span class="kind k-official">공식</span></dt><dd>그 제품이나 규격을 만든 회사·단체가 직접 올린 저장소입니다.</dd>
+        <dt><span class="kind k-org">단체</span></dt><dd>회사·단체 계정이 올렸지만, 그 제품의 공식 저장소는 아닙니다.</dd>
+        <dt><span class="kind k-user">개인</span></dt><dd>개인 계정이 올린 것입니다. 이름은 그 사람이 프로필에 적어 둔 이름입니다.</dd>
+        <dt><span class="ver">✓ GitHub 인증</span></dt><dd>GitHub가 그 계정의 회사 도메인을 확인했다는 표시입니다. 없다고 가짜라는 뜻은 아닙니다.</dd>
+        <dt><span class="grade g-필수">필수</span> <span class="grade g-추천">추천</span> <span class="grade g-선택">선택</span> <span class="grade g-보류">보류</span></dt><dd>운영자가 붙인 추천 정도입니다.</dd>
+        <dt>점수</dt><dd>100점 만점의 자동 계산 값입니다. 실용성과 완성도는 별 수로 어림한 것이라, 사람이 써 보고 확인하기 전까지는 참고용입니다.</dd>
+        <dt>설명</dt><dd>각 저장소의 소개 글을 읽고 쓴 것입니다. 직접 써 본 결과가 아닌 항목도 있습니다. 설치 전에 저장소의 안내문과 스크립트를 직접 확인하세요.</dd>
+      </dl>
+    </details>
+  </header>
+
+  <div class="tools" id="tools">
+    <div class="find">
+      <input id="q" type="search" placeholder="이름, 설명, 올린 곳으로 찾기" aria-label="이름, 설명, 올린 곳으로 찾기">
+      <select id="sort" aria-label="정렬">
+        <option value="score">점수 높은 순</option>
+        <option value="stars">별 많은 순</option>
+        <option value="pushed">최근 갱신 순</option>
+      </select>
+    </div>
+    <div class="row" id="cats" role="group" aria-label="분야"><span class="lab">분야</span><button type="button" class="chip" data-f="" aria-pressed="true">전체 <small>__COUNT__</small></button>__CAT_BTNS__</div>
+    <div class="row" id="pubs" role="group" aria-label="올린 곳"><span class="lab">올린 곳</span><button type="button" class="chip" data-p="" aria-pressed="true">전체</button>__PUB_BTNS__<span class="count" id="count"></span></div>
+  </div>
+
+  <main>
+    <div class="grid" id="grid">__CARDS__</div>
+    <p class="empty" id="empty" hidden>조건에 맞는 항목이 없습니다. 찾는 말이나 분야를 바꿔 보세요.</p>
+  </main>
+
+  <footer>
+    자료와 한계
+    <ul>
+      <li>별 수, 갱신일, 라이선스, 올린 계정 정보는 GitHub 공식 API에서 받습니다. 접속이 안 되는 주에는 저장해 둔 값을 씁니다.</li>
+      <li>라이선스 '미표기'는 GitHub가 라이선스를 알려 주지 않았다는 뜻입니다.</li>
+      <li>별 수와 점수는 인기와 관리 상태를 보여 줄 뿐, 품질이나 안전을 보증하지 않습니다.</li>
+    </ul>
+  </footer>
+</div>
+<script>
+(function () {
+  var grid = document.getElementById('grid'), cards = [].slice.call(grid.children);
+  var q = document.getElementById('q'), sort = document.getElementById('sort');
+  var catBtns = [].slice.call(document.querySelectorAll('#cats .chip')), pubBtns = [].slice.call(document.querySelectorAll('#pubs .chip'));
+  var f = '', p = '';
+  function press(btns, on) { btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b === on)); }); }
+  function apply() {
+    var s = q.value.trim().toLowerCase(), n = 0;
+    cards.forEach(function (c) {
+      var ok = (!f || c.dataset.cat === f) && (!p || c.dataset.pub === p) && (!s || c.dataset.name.indexOf(s) >= 0);
+      c.hidden = !ok; if (ok) n++;
+    });
+    document.getElementById('count').textContent = cards.length + '개 중 ' + n + '개';
+    document.getElementById('empty').hidden = n > 0;
+  }
+  function order() {
+    var k = sort.value;
+    cards.slice().sort(function (a, b) {
+      if (k === 'pushed') return a.dataset.pushed < b.dataset.pushed ? 1 : a.dataset.pushed > b.dataset.pushed ? -1 : 0;
+      return (+b.dataset[k]) - (+a.dataset[k]) || (+b.dataset.stars) - (+a.dataset.stars);
+    }).forEach(function (c) { grid.appendChild(c); });
+  }
+  catBtns.forEach(function (b) { b.addEventListener('click', function () { f = b.dataset.f; press(catBtns, b); apply(); try { localStorage.setItem('sm-f', f); } catch (e) {} }); });
+  pubBtns.forEach(function (b) { b.addEventListener('click', function () { p = b.dataset.p; press(pubBtns, b); apply(); }); });
+  q.addEventListener('input', apply);
+  sort.addEventListener('change', order);
+  grid.addEventListener('click', function (e) {
+    var b = e.target.closest ? e.target.closest('.copy') : null; if (!b) return;
+    var text = b.previousElementSibling.textContent, done = function (t) { b.textContent = t; setTimeout(function () { b.textContent = '복사'; }, 1600); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function () { done('복사됨'); }, function () { done('복사 실패'); });
+    else done('복사 실패');
+  });
+  try { var sv = localStorage.getItem('sm-f'); if (sv) { var hit = catBtns.filter(function (x) { return x.dataset.f === sv; })[0]; if (hit) { f = sv; press(catBtns, hit); } } } catch (e) {}
+  order(); apply();
+})();
+</script>
+</body>
+</html>

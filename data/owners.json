@@ -1,0 +1,178 @@
+{
+  "addyosmani": {
+    "fetched": "2026-11-20",
+    "kind": "user",
+    "login": "addyosmani",
+    "name": "Addy Osmani",
+    "verified": null,
+    "website": "https://www.addyosmani.com"
+  },
+  "adobe": {
+    "fetched": "2026-11-20",
+    "kind": "org",
+    "login": "adobe",
+    "name": "Adobe, Inc.",
+    "verified": true,
+    "website": "https://adobe.com"
+  },
+  "affaan-m": {
+    "fetched": "2026-11-20",
+    "kind": "user",
+    "login": "affaan-m",
+    "name": "Affaan Mustafa",
+    "verified": null,
+    "website": "https://affaanmustafa.com"
+  },
+  "agentskills": {
+    "fetched": "2026-11-20",
+    "kind": "org",
+    "login": "agentskills",
+    "name": "Agent Skills",
+    "verified": true,
+    "website": "https://agentskills.io"
+  },
+  "anthropics": {
+    "fetched": "2026-11-20",
+    "kind": "org",
+    "login": "anthropics",
+    "name": "Anthropic",
+    "verified": true,
+    "website": "https://anthropic.com"
+  },
+  "davila7": {
+    "fetched": "2026-11-20",
+    "kind": "user",
+    "login": "davila7",
+    "name": "Daniel Avila",
+    "verified": null,
+    "website": "https://danielavila.me"
+  },
+  "github": {
+    "fetched": "2026-11-20",
+    "kind": "org",
+    "login": "github",
+    "name": "GitHub",
+    "verified": true,
+    "website": "https://github.com/about"
+  },
+  "google-gemini": {
+    "fetched": "2026-11-20",
+    "kind": "org",
+    "login": "google-gemini",
+    "name": "google-gemini",
+    "verified": false,
+    "website": "https://ai.google.dev/gemini-api/docs"
+  },
+  "hesreallyhim": {
+    "fetched": "2026-11-20",
+    "kind": "user",
+    "login": "hesreallyhim",
+    "name": "Really Him",
+    "verified": null,
+    "website": "https://reponomics.org"
+  },
+  "jakeschincariol": {
+    "fetched": "2026-11-20",
+    "kind": "user",
+    "login": "Jakeschincariol",
+    "name": "Jake Schincariol",
+    "verified": null,
+    "website": "jakeschincariol.co"
+  },
+  "mattpocock": {
+    "fetched": "2026-11-20",
+    "kind": "user",
+    "login": "mattpocock",
+    "name": "Matt Pocock",
+    "verified": null,
+    "website": "https://aihero.dev"
+  },
+  "microsoft": {
+    "fetched": "2026-11-20",
+    "kind": "org",
+    "login": "microsoft",
+    "name": "Microsoft",
+    "verified": true,
+    "website": "https://opensource.microsoft.com"
+  },
+  "modelcontextprotocol": {
+    "fetched": "2026-11-20",
+    "kind": "org",
+    "login": "modelcontextprotocol",
+    "name": "Model Context Protocol",
+    "verified": true,
+    "website": "https://modelcontextprotocol.io"
+  },
+  "n8n-io": {
+    "fetched": "2026-11-20",
+    "kind": "org",
+    "login": "n8n-io",
+    "name": "n8n - Workflow Automation",
+    "verified": true,
+    "website": "https://n8n.io"
+  },
+  "obra": {
+    "fetched": "2026-11-20",
+    "kind": "user",
+    "login": "obra",
+    "name": "Jesse Vincent",
+    "verified": null,
+    "website": "http://fsck.com"
+  },
+  "openai": {
+    "fetched": "2026-11-20",
+    "kind": "org",
+    "login": "openai",
+    "name": "OpenAI",
+    "verified": true,
+    "website": "https://openai.com/"
+  },
+  "patrickjs": {
+    "fetched": "2026-11-20",
+    "kind": "user",
+    "login": "PatrickJS",
+    "name": "PatrickJS",
+    "verified": null,
+    "website": "patrickjs.com"
+  },
+  "punkpeye": {
+    "fetched": "2026-11-20",
+    "kind": "user",
+    "login": "punkpeye",
+    "name": "Frank Fiegel",
+    "verified": null,
+    "website": "https://glama.ai"
+  },
+  "upstash": {
+    "fetched": "2026-11-20",
+    "kind": "org",
+    "login": "upstash",
+    "name": "Upstash",
+    "verified": false,
+    "website": "https://upstash.com"
+  },
+  "vercel-labs": {
+    "fetched": "2026-11-20",
+    "kind": "org",
+    "login": "vercel-labs",
+    "name": "Vercel Labs",
+    "verified": true,
+    "website": "https://vercel.com"
+  },
+  "voltagent": {
+    "fetched": "2026-11-20",
+    "kind": "org",
+    "login": "VoltAgent",
+    "name": "VoltAgent",
+    "verified": true,
+    "website": "https://voltagent.dev"
+  },
+  "wshobson": {
+    "fetched": "2026-11-20",
+    "kind": "user",
+    "login": "wshobson",
+    "name": "Seth Hobson",
+    "verified": null,
+    "website": "https://major7apps.com"
+  }
+}

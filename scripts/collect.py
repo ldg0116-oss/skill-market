@@ -6,6 +6,10 @@
 - 100점 평가 (실용성25 설치편의15 완성도20 유지보수15 비용10 보안15) — 검증 가능한 항목만 자동, 나머지는 미검증(None)
 - 5 카테고리 자동 분류: 코딩 / 기획·문서 / 마케팅·콘텐츠 / 자동화 / 비개발자
 - 이전 skills.json 과 비교해 신규·변동을 data/diff.json 에 기록
+- 올린 곳(저장소 소유 계정)의 공개 정보: 회사·단체/개인, 표시 이름, GitHub 도메인 인증 여부 → data/owners.json (30일 캐시)
+
+  python scripts/collect.py              전체 수집
+  python scripts/collect.py --meta-only  저장소 수치는 그대로 두고 한글 설명(ko.json)과 올린 곳 정보만 다시 반영
 """
 import json, os, re, sys, time
 from datetime import datetime, timezone, timedelta
@@ -33,11 +37,13 @@ CATEGORY_RULES = [
 CATEGORIES = ["코딩", "기획·문서", "마케팅·콘텐츠", "자동화", "비개발자"]
 
 
-def gh(url, params=None, retry=2):
+def gh(url, params=None, retry=2, quiet404=False):
     for i in range(retry + 1):
         r = requests.get(url, headers=HEAD, params=params, timeout=30)
         if r.status_code == 200:
             return r.json()
+        if r.status_code == 404 and quiet404:
+            return None
         limited = r.headers.get("X-RateLimit-Remaining") == "0" or r.status_code == 429
         if limited and i < retry:
             reset = int(r.headers.get("X-RateLimit-Reset", time.time() + 60))
@@ -121,6 +127,56 @@ def from_snapshot(seed):
             "topics": [], "archived": False, "size": 0, "_source": f"snapshot {SNAPSHOT.get('as_of')}"}
 
 
+# ---------- 올린 곳 (저장소를 소유한 계정) ----------
+OWNERS_P = DATA / "owners.json"
+OWNERS = json.loads(OWNERS_P.read_text(encoding="utf-8")) if OWNERS_P.exists() else {}
+OWNER_TTL_DAYS = 30
+
+
+def fetch_owner(login, type_hint=None):
+    """계정의 공개 정보: kind(org=회사·단체 / user=개인), 표시 이름, verified(GitHub가 도메인을 확인한 조직인지).
+    data/owners.json 에 30일 캐시한다. API를 쓸 수 없으면 캐시나 '미확인'을 돌려준다."""
+    key = login.lower()
+    cached = OWNERS.get(key)
+    today = datetime.now(timezone.utc).date()
+    if cached and cached.get("fetched"):
+        if (today - datetime.fromisoformat(cached["fetched"]).date()).days < OWNER_TTL_DAYS:
+            return cached
+    unknown = cached or {"login": login, "kind": "unknown", "name": login, "verified": None, "website": ""}
+    if not api_reachable():
+        return unknown
+    info = None
+    if type_hint != "User":  # 조직이면 /orgs 가 표시 이름과 도메인 인증 여부를 준다. 개인 계정이면 404.
+        o = gh(f"{API}/orgs/{login}", quiet404=True)
+        if o:
+            info = {"login": o.get("login", login), "kind": "org", "name": o.get("name") or o.get("login", login),
+                    "verified": bool(o.get("is_verified")), "website": o.get("blog") or ""}
+    if info is None:
+        u = gh(f"{API}/users/{login}")
+        if u:
+            info = {"login": u.get("login", login), "kind": "org" if u.get("type") == "Organization" else "user",
+                    "name": u.get("name") or u.get("login", login), "verified": None, "website": u.get("blog") or ""}
+    if info is None:
+        return unknown
+    info["fetched"] = today.isoformat()
+    OWNERS[key] = info
+    return info
+
+
+def publisher(info):
+    return {k: info.get(k) for k in ("login", "name", "kind", "verified", "website")}
+
+
+def save_owners():
+    OWNERS_P.write_text(json.dumps(OWNERS, ensure_ascii=False, indent=2, sort_keys=True), encoding="utf-8")
+
+
+def ko_fields(full):
+    k = KO.get(full, {})
+    return {"ko": k.get("ko", ""), "ko_desc": k.get("desc", ""), "what": k.get("what", ""), "rec": k.get("rec", ""),
+            "comment": k.get("comment", ""), "pros": k.get("pros", ""), "cons": k.get("cons", "")}
+
+
 def fetch_repo(seed):
     full = seed["repo"]
     print(f"- {full}", file=sys.stderr)
@@ -134,12 +190,12 @@ def fetch_repo(seed):
     text = f"{full} {desc} {' '.join(r.get('topics', []))} {seed.get('type','')}"
     k = KO.get(full, {})
     return {
-        "ko": k.get("ko", ""), "ko_desc": k.get("desc", ""), "rec": k.get("rec", ""), "comment": k.get("comment", ""),
-        "pros": k.get("pros", ""), "cons": k.get("cons", ""),
+        **ko_fields(full),
         "repo": full,
         "url": r["html_url"],
         "name": r["name"],
         "owner": r["owner"]["login"],
+        "publisher": publisher(fetch_owner(r["owner"]["login"], r["owner"].get("type"))),
         "description": desc,
         "type": seed.get("type"),
         "official": bool(seed.get("official")),
@@ -180,12 +236,28 @@ def discover():
     return found
 
 
+def meta_only():
+    """저장소 수치(별, 갱신일, 점수)는 그대로 두고, 한글 설명(ko.json)과 올린 곳 정보만 다시 반영한다."""
+    path = DATA / "skills.json"
+    cur = json.loads(path.read_text(encoding="utf-8"))
+    for s in cur["skills"]:
+        s.update(ko_fields(s["repo"]))
+        s["publisher"] = publisher(fetch_owner(s["owner"]))
+    path.write_text(json.dumps(cur, ensure_ascii=False, indent=2), encoding="utf-8")
+    save_owners()
+    kinds = [s["publisher"]["kind"] for s in cur["skills"]]
+    print(f"설명·올린 곳 반영 {len(cur['skills'])}개 (회사·단체 {kinds.count('org')}, 개인 {kinds.count('user')}, 미확인 {kinds.count('unknown')})", file=sys.stderr)
+
+
 def main():
+    if "--meta-only" in sys.argv:
+        return meta_only()
     prev_path = DATA / "skills.json"
     prev = json.loads(prev_path.read_text(encoding="utf-8")) if prev_path.exists() else {"skills": []}
     prev_map = {s["repo"]: s for s in prev.get("skills", [])}
 
     skills = [x for x in (fetch_repo(s) for s in SEEDS["repos"]) if x]
+    save_owners()
     skills.sort(key=lambda s: (-s["score"]["합계"], -s["stars"]))
 
     # 변동 기록
