@@ -1,193 +1,193 @@
 {
-  "generated_at": "2026-11-20T10:39:43.083229+00:00",
+  "generated_at": "2026-11-23T02:43:31.438494+00:00",
   "new": [],
   "star_jump": [],
   "stale": [
     {
       "repo": "PatrickJS/awesome-cursorrules",
-      "days": 173
+      "days": 176
     }
   ],
   "candidates": [
     {
       "repo": "morluto/rea",
       "url": "https://github.com/morluto/rea",
-      "stars": 470711,
+      "stars": 474229,
       "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
-      "pushed_at": "2026-11-20",
+      "pushed_at": "2026-11-23",
       "license": "MIT",
       "query": "topic:agent-skills"
     },
     {
       "repo": "DietrichGebert/ponytail",
       "url": "https://github.com/DietrichGebert/ponytail",
-      "stars": 195193,
+      "stars": 196946,
       "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
-      "pushed_at": "2026-10-29",
+      "pushed_at": "2026-11-22",
       "license": "MIT",
       "query": "topic:agent-skills"
     },
     {
       "repo": "Leonxlnx/taste-skill",
       "url": "https://github.com/Leonxlnx/taste-skill",
-      "stars": 119107,
+      "stars": 120175,
       "description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
-      "pushed_at": "2026-11-08",
+      "pushed_at": "2026-11-22",
       "license": "MIT",
       "query": "topic:agent-skills"
     },
     {
       "repo": "paperclipai/paperclip",
       "url": "https://github.com/paperclipai/paperclip",
-      "stars": 115336,
+      "stars": 116007,
       "description": "The open-source app everyone uses to manage agents at work",
-      "pushed_at": "2026-11-20",
+      "pushed_at": "2026-11-22",
       "license": "MIT",
       "query": "topic:agent-skills"
     },
     {
       "repo": "pbakaus/impeccable",
       "url": "https://github.com/pbakaus/impeccable",
-      "stars": 113731,
+      "stars": 115078,
       "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
-      "pushed_at": "2026-11-20",
+      "pushed_at": "2026-11-23",
       "license": "Apache-2.0",
       "query": "topic:agent-skills"
     },
     {
       "repo": "nexu-io/open-design",
       "url": "https://github.com/nexu-io/open-design",
-      "stars": 108611,
+      "stars": 108999,
       "description": "The 1st Collaborative AI Design Agent Workspace. Local-first and open source. Create motion, prototypes, websites, apps, dashboards, presentations, images, and videos with your team and AI agents. Share work, exchange feedback, and iterate together in one workspace.",
-      "pushed_at": "2026-11-20",
+      "pushed_at": "2026-11-23",
       "license": "Apache-2.0",
       "query": "topic:agent-skills"
     },
     {
       "repo": "D4Vinci/Scrapling",
       "url": "https://github.com/D4Vinci/Scrapling",
-      "stars": 104547,
+      "stars": 105058,
       "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
-      "pushed_at": "2026-11-17",
+      "pushed_at": "2026-11-22",
       "license": "BSD-3-Clause",
       "query": "topic:mcp-server stars:>1000"
     },
     {
       "repo": "tt-a1i/archify",
       "url": "https://github.com/tt-a1i/archify",
-      "stars": 98194,
+      "stars": 98819,
       "description": "Turn any idea, plan, or codebase into a beautiful interactive diagram. An agent skill for Claude Code, Codex, and more.",
-      "pushed_at": "2026-11-20",
+      "pushed_at": "2026-11-23",
       "license": "Apache-2.0",
       "query": "topic:agent-skills"
     },
     {
       "repo": "koala73/worldmonitor",
       "url": "https://github.com/koala73/worldmonitor",
-      "stars": 90974,
+      "stars": 91078,
       "description": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
-      "pushed_at": "2026-11-20",
+      "pushed_at": "2026-11-23",
       "license": "AGPL-3.0",
       "query": "topic:mcp-server stars:>1000"
     },
     {
+      "repo": "heygen-com/hyperframes",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "stars": 88331,
+      "description": "Open-source AI video editor: edit your own footage, or create and remake any video with Claude Code, Codex or the free Studio app. Write HTML, render MP4. By HeyGen.",
+      "pushed_at": "2026-11-23",
+      "license": "Apache-2.0",
+      "query": "topic:agent-skills"
+    },
+    {
       "repo": "career-ops-hq/career-ops",
       "url": "https://github.com/career-ops-hq/career-ops",
-      "stars": 83875,
+      "stars": 84237,
       "description": "Open-source AI job search agent and job finder: scan job boards, score each job 1-5 against your CV before you apply, tailor an ATS-friendly resume and cover letter, get interview prep and an application tracker. It helps you fill in each application; you press Submit. Runs locally in Codex, OpenCode and other AI CLIs, or as a Claude Code plugin.",
-      "pushed_at": "2026-11-20",
+      "pushed_at": "2026-11-22",
       "license": "MIT",
       "query": "topic:agent-skills"
     },
     {
       "repo": "ruvnet/ruflo",
       "url": "https://github.com/ruvnet/ruflo",
-      "stars": 82133,
+      "stars": 82282,
       "description": "🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
-      "pushed_at": "2026-11-20",
+      "pushed_at": "2026-11-23",
       "license": "MIT",
       "query": "topic:mcp-server stars:>1000"
     },
     {
       "repo": "ComposioHQ/awesome-claude-skills",
       "url": "https://github.com/ComposioHQ/awesome-claude-skills",
-      "stars": 79918,
+      "stars": 80080,
       "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows",
       "pushed_at": "2026-09-18",
       "license": "미표기",
       "query": "topic:agent-skills"
     },
     {
+      "repo": "mvanhorn/last30days-skill",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "stars": 72809,
+      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+      "pushed_at": "2026-11-23",
+      "license": "MIT",
+      "query": "topic:agent-skills"
+    },
+    {
       "repo": "blader/humanizer",
       "url": "https://github.com/blader/humanizer",
-      "stars": 71470,
+      "stars": 72375,
       "description": "Agent skill that removes signs of AI-generated writing from text",
       "pushed_at": "2026-11-19",
       "license": "MIT",
       "query": "topic:agent-skills"
     },
     {
+      "repo": "cathrynlavery/diagram-design",
+      "url": "https://github.com/cathrynlavery/diagram-design",
+      "stars": 70365,
+      "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+      "pushed_at": "2026-11-22",
+      "license": "MIT",
+      "query": "topic:agent-skills"
+    },
+    {
       "repo": "shanraisshan/claude-code-best-practice",
       "url": "https://github.com/shanraisshan/claude-code-best-practice",
-      "stars": 69254,
+      "stars": 69324,
       "description": "from vibe coding to agentic engineering - practice makes claude perfect",
-      "pushed_at": "2026-11-20",
+      "pushed_at": "2026-11-22",
       "license": "MIT",
       "query": "topic:claude-code-skills"
     },
     {
-      "repo": "cathrynlavery/diagram-design",
-      "url": "https://github.com/cathrynlavery/diagram-design",
-      "stars": 68947,
-      "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
-      "pushed_at": "2026-11-19",
-      "license": "MIT",
-      "query": "topic:agent-skills"
-    },
-    {
       "repo": "sansan0/TrendRadar",
       "url": "https://github.com/sansan0/TrendRadar",
-      "stars": 63752,
-      "description": "⭐AI-driven public opinion & trend monitor with multi-platform aggregation, RSS, and smart alerts.🎯 告别信息过载，你的 AI 舆情监控助手与热点筛选工具！聚合多平台热点 +  RSS 订阅，支持关键词精准筛选。AI 智能筛选新闻 + AI 翻译 +  AI 分析简报直推手机，也支持接入 MCP 架构，赋能 AI 自然语言对话分析、情感洞察与趋势预测等。支持 Docker ，数据本地/云端自持。集成微信/飞书/钉钉/Telegram/邮件/ntfy/bark/slack 等渠道智能推送。",
-      "pushed_at": "2026-11-15",
+      "stars": 63804,
+      "description": "⭐AI-driven public opinion & trend monitor with multi-platform aggregation, RSS, web search, MCP & smart alerts.🎯 告别信息过载，你的 AI     舆情监控助手与热点筛选工具！聚合多平台热点 + RSS 订阅 + 定时联网搜索，支持关键词与 AI 智能筛选。AI 翻译 + AI 分析简报直推手机，支持接入 MCP     架构，赋能 AI 自然语言对话分析、实时检索、情感洞察与趋势预测。支持 Docker，数据本地/云端自持。集成微信/飞书/钉钉/Telegram/邮件/ntfy/Bark/Slack     等渠道智能推送。",
+      "pushed_at": "2026-11-21",
       "license": "GPL-3.0",
       "query": "topic:mcp-server stars:>1000"
     },
     {
-      "repo": "coreyhaines31/marketingskills",
-      "url": "https://github.com/coreyhaines31/marketingskills",
-      "stars": 61604,
-      "description": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
-      "pushed_at": "2026-11-20",
-      "license": "MIT",
-      "query": "topic:agent-skills"
-    },
-    {
       "repo": "ChromeDevTools/chrome-devtools-mcp",
       "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
-      "stars": 58448,
+      "stars": 58861,
       "description": "Chrome DevTools for coding agents",
-      "pushed_at": "2026-11-20",
+      "pushed_at": "2026-11-22",
       "license": "Apache-2.0",
       "query": "topic:mcp-server stars:>1000"
     },
     {
       "repo": "sickn33/agentic-awesome-skills",
       "url": "https://github.com/sickn33/agentic-awesome-skills",
-      "stars": 50024,
+      "stars": 50163,
       "description": "3,000+ reusable AI agent skills for Claude Code, Codex, Cursor and Gemini CLI. AAS Core adds local catalog discovery, agent-owned selection and plan preview. CLI, MCP and plugins.",
-      "pushed_at": "2026-11-20",
+      "pushed_at": "2026-11-22",
       "license": "MIT",
       "query": "topic:claude-code-skills"
-    },
-    {
-      "repo": "DeusData/codebase-memory-mcp",
-      "url": "https://github.com/DeusData/codebase-memory-mcp",
-      "stars": 48910,
-      "description": "Local code intelligence for developers and AI agents. Connect code, docs and infrastructure in a persistent graph, with CBM Lens, MCP tools, agent integrations and change-aware test selection.",
-      "pushed_at": "2026-11-19",
-      "license": "MIT",
-      "query": "topic:mcp-server stars:>1000"
     }
   ]
 }

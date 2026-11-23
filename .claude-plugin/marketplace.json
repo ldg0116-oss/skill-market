@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "주 1회 자동 수집·검증·분류되는 AI 스킬 마켓 (코딩/기획·문서/마케팅·콘텐츠/자동화/비개발자)",
-    "version": "2026-11-21"
+    "version": "2026-11-23"
   },
   "plugins": [
     {
@@ -16,7 +16,7 @@
         "repo": "mattpocock/skills"
       },
       "description": "[코딩·추천·94점] 맷 포콕 실무 스킬 — grill-me(요구사항 캐묻기)·TDD 등 작고 날카로운 실무 스킬",
-      "version": "2026-11-21",
+      "version": "2026-11-23",
       "author": {
         "name": "mattpocock"
       },
@@ -38,7 +38,7 @@
         "repo": "affaan-m/everything-claude-code"
       },
       "description": "[코딩·선택·94점] 에브리씽 클로드 코드 (ECC) — 스킬+메모리+보안+리서치가 묶인 대형 종합 세트",
-      "version": "2026-11-21",
+      "version": "2026-11-23",
       "author": {
         "name": "affaan-m"
       },
@@ -58,7 +58,7 @@
         "repo": "anthropics/skills"
       },
       "description": "[기획·문서·필수·92점] 앤트로픽 공식 스킬 — 워드·PDF·PPT·엑셀 생성 등 공식 스킬 모음. SKILL.md 형식의 기준",
-      "version": "2026-11-21",
+      "version": "2026-11-23",
       "author": {
         "name": "anthropics"
       },
@@ -80,7 +80,7 @@
         "repo": "addyosmani/agent-skills"
       },
       "description": "[코딩·추천·92점] 애디 오스마니 엔지니어링 스킬 — 스펙→구현→테스트→리뷰 프로덕션급 워크플로 24개",
-      "version": "2026-11-21",
+      "version": "2026-11-23",
       "author": {
         "name": "addyosmani"
       },
@@ -102,7 +102,7 @@
         "repo": "obra/superpowers"
       },
       "description": "[코딩·추천·91점] 슈퍼파워 — 브레인스토밍→계획→TDD→리뷰를 강제하는 개발 방법론 스킬 세트",
-      "version": "2026-11-21",
+      "version": "2026-11-23",
       "author": {
         "name": "obra"
       },
@@ -124,7 +124,7 @@
         "repo": "anthropics/claude-plugins-official"
       },
       "description": "[자동화·추천·79점] 클로드 공식 플러그인 디렉터리 — /plugin > Discover 에 뜨는 공식 목록",
-      "version": "2026-11-21",
+      "version": "2026-11-23",
       "author": {
         "name": "anthropics"
       },
@@ -144,7 +144,7 @@
         "repo": "wshobson/agents"
       },
       "description": "[코딩·선택·76점] 역할별 에이전트 마켓 — 85개 전문 에이전트·47개 스킬 플러그인 모음",
-      "version": "2026-11-21",
+      "version": "2026-11-23",
       "author": {
         "name": "wshobson"
       },
@@ -164,7 +164,7 @@
         "repo": "adobe/skills"
       },
       "description": "[마케팅·콘텐츠·보류·70점] 어도비 스킬 — AEM·애널리틱스·커머스 등 어도비 제품용 108개",
-      "version": "2026-11-21",
+      "version": "2026-11-23",
       "author": {
         "name": "adobe"
       },
@@ -185,7 +185,7 @@
         "repo": "VoltAgent/awesome-claude-code-subagents"
       },
       "description": "[코딩·선택·67점] 서브에이전트 100선 — 서브에이전트 정의 파일 100개 이상",
-      "version": "2026-11-21",
+      "version": "2026-11-23",
       "author": {
         "name": "VoltAgent"
       },
@@ -205,7 +205,7 @@
         "repo": "Jakeschincariol/replica-skill"
       },
       "description": "[기획·문서·선택·62점] 레플리카 (앱 클린룸 복제) — 참고 앱의 흐름을 분석해 코드·로고 안 베끼고 새로 만드는 11단계",
-      "version": "2026-11-21",
+      "version": "2026-11-23",
       "author": {
         "name": "Jakeschincariol"
       },
